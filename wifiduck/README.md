@@ -30,6 +30,12 @@
 
 0. Install the latest version of the [Arduino IDE](https://www.arduino.cc/en/main/software).
 
+### [Coming Soon!] Boards Manager Method (recommended)
+
+1. Start Arduino and open the Preferences window.
+2. Enter `https://raw.githubusercontent.com/spacehuhn/hardware/master/wifiduck/package_wifiduck_index.json` into the *Additional Board Manager URLs* field. You can add multiple URLs, separating them with commas.
+3. Go to `Tools` > `Board` > `Board Manager`, search for `wifi duck` and install `WiFi Duck AVR Boards` and `WiFi Duck ESP8266 Boards`.
+
 ### Git Method
 
 1. [Install the ESP8266 Arduino Core](https://github.com/esp8266/Arduino#installing-with-boards-manager) - You will need the tools it installes.
@@ -37,12 +43,6 @@
 3. Open or create a folder called `hardware`.
 4. Clone this repository `git clone https://github.com/spacehuhn/hardware.git` or [download .zip](https://github.com/spacehuhn/Arduino/archive/master.zip) and extract it into the `hardware` folder. 
 The resulting path should look something like this: `../Arduino/hardware/wifiduck/esp8266/...`.
-
-### [Coming Soon!] Boards Manager Method (recommended)
-
-1. Start Arduino and open the Preferences window.
-2. Enter `https://raw.githubusercontent.com/spacehuhn/hardware/master/wifiduck/package_wifiduck_index.json` into the *Additional Board Manager URLs* field. You can add multiple URLs, separating them with commas.
-3. Go to `Tools` > `Board` > `Board Manager`, search for `wifi duck` and install `WiFi Duck AVR Boards` and `WiFi Duck ESP8266 Boards`.
 
 ## Credits
 
