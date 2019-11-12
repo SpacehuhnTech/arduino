@@ -5,12 +5,23 @@
 ## Boards
 
 **WiFi Duck AVR**
+* DSTIKE WiFiDuck
 * ATmega32u4
-  * 5V 16MHz
-  * 3.3V 8MHz
-* DSTIKE WiFi Duck (ATmega32u4)
+* Arduino Leonardo
+* Arduino Micro
+* Sparkfun Pro Micro
+* CJMCU Beetle
+* SS Micro
 
 **WiFi Duck ESP8266**
+* DSTIKE WiFi Duck
+* Generic ESP8266 Module
+* Generic ESP8285 Module
+* NodeMCU 1.0 (ESP-12E Module)
+* LOLIN(WEMOS) D1 Mini
+* LOLIN(WEMOS) D1 Mini Pro
+* LOLIN(WEMOS) D1 Mini Lite
+			
 * ESP8266
 * ESP8285
 * DSTIKE WiFi Duck (ESP8266)
@@ -19,19 +30,19 @@
 
 0. Install the latest version of the [Arduino IDE](https://www.arduino.cc/en/main/software).
 
+### Git
+
+1. [Install the ESP8266 Arduino Core](https://github.com/esp8266/Arduino#installing-with-boards-manager) - You will need the tools it installes.
+2. Go to your Arduino sketchbook location (you can see and edit the path in the Arduino preferences).
+3. Open or create a folder called `hardware`.
+4. Clone this repository `git clone https://github.com/spacehuhn/hardware.git` or [download .zip](https://github.com/spacehuhn/Arduino/archive/master.zip) and extract it into the `hardware` folder. 
+The resulting path should look something like this: `../Arduino/hardware/wifiduck/esp8266/...`.
+
 ### Boards Manager (coming soon)
 
 1. Start Arduino and open the Preferences window.
 2. Enter `https://raw.githubusercontent.com/spacehuhn/hardware/master/wifiduck/package_wifiduck_index.json` into the *Additional Board Manager URLs* field. You can add multiple URLs, separating them with commas.
-3. Open Boards Manager from Tools > Board menu and install the [boards](#boards) you need for your [project](#project).
-
-### Git
-
-1. Go to your Arduino sketchbook location (you can see and edit the path in the Arduino preferences).
-2. Open or create a folder called `hardware`.
-3. Clone this repository `git clone https://github.com/spacehuhn/hardware.git` or [download .zip](https://github.com/spacehuhn/Arduino/archive/master.zip) and extract it into the `hardware` folder. 
-The resulting path should look something like this: `../Arduino/hardware/wifiduck/`.
-4. Go to `hardware/wifiduck/esp8266/tools` and run `python get.py` from a terminal inside that folder.
+3. Go to `Tools` > `Board` > `Board Manager`, search for `wifi duck` and install `WiFi Duck AVR Boards` and `WiFi Duck ESP8266 Boards`.
 
 ## Credits
 
