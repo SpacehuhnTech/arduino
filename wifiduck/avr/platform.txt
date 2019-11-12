@@ -47,7 +47,7 @@ build.bridge_rst=
 build.bridge_0=
 
 # Board flags
-build.board_flags=-DDUCKMCU=ATMEGA32U4 {build.usb_flags} {build.extra_flags} {build.protocol_flags} {build.debug_flags} {build.led_flags} {build.led_pin} {build.bridge_flags} {build.bridge_button} {build.bridge_rst} {build.bridge_0}
+build.board_flags={build.usb_flags} {build.extra_flags} {build.protocol_flags} {build.debug_flags} {build.led_flags} {build.led_pin} {build.bridge_flags} {build.bridge_button} {build.bridge_rst} {build.bridge_0}
 
 # These can be overridden in platform.local.txt
 compiler.c.extra_flags=

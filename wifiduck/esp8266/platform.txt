@@ -80,7 +80,7 @@ compiler.size.cmd=xtensa-lx106-elf-size
 build.debug_flags=
 build.protocol_flags=
 
-build.extra_flags=-DESP8266 -DDUCKMCU=ESP8266 {build.debug_flags} {build.protocol_flags}
+build.extra_flags=-DESP8266 {build.debug_flags} {build.protocol_flags}
 
 # These can be overridden in platform.local.txt
 compiler.c.extra_flags=
