@@ -121,6 +121,18 @@ atmega32u4.menu.keyboardid.apple=Apple Keyboard
 atmega32u4.menu.keyboardid.apple.build.vid=0x05ac
 atmega32u4.menu.keyboardid.apple.build.pid=0x0221
 
+atmega32u4.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+atmega32u4.menu.keyboardid.apple.build.vid=0x05ac
+atmega32u4.menu.keyboardid.apple.build.pid=0x0259
+
+atmega32u4.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+atmega32u4.menu.keyboardid.apple.build.vid=0x046d
+atmega32u4.menu.keyboardid.apple.build.pid=0xc316
+
+atmega32u4.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+atmega32u4.menu.keyboardid.apple.build.vid=0x046d
+atmega32u4.menu.keyboardid.apple.build.pid=0xc335
+
 ########## Protocol ##########
 atmega32u4.menu.protocol.auto=Auto (I2C & Serial)
 atmega32u4.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
@@ -373,6 +385,18 @@ leonardo.menu.keyboardid.apple=Apple Keyboard
 leonardo.menu.keyboardid.apple.build.vid=0x05ac
 leonardo.menu.keyboardid.apple.build.pid=0x0221
 
+leonardo.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+leonardo.menu.keyboardid.apple.build.vid=0x05ac
+leonardo.menu.keyboardid.apple.build.pid=0x0259
+
+leonardo.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+leonardo.menu.keyboardid.apple.build.vid=0x046d
+leonardo.menu.keyboardid.apple.build.pid=0xc316
+
+leonardo.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+leonardo.menu.keyboardid.apple.build.vid=0x046d
+leonardo.menu.keyboardid.apple.build.pid=0xc335
+
 ########## Protocol ##########
 leonardo.menu.protocol.auto=Auto (I2C & Serial)
 leonardo.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
@@ -616,6 +640,18 @@ micro.menu.keyboardid.default.build.pid=0x8036
 micro.menu.keyboardid.apple=Apple Keyboard
 micro.menu.keyboardid.apple.build.vid=0x05ac
 micro.menu.keyboardid.apple.build.pid=0x0221
+
+micro.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+micro.menu.keyboardid.apple.build.vid=0x05ac
+micro.menu.keyboardid.apple.build.pid=0x0259
+
+micro.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+micro.menu.keyboardid.apple.build.vid=0x046d
+micro.menu.keyboardid.apple.build.pid=0xc316
+
+micro.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+micro.menu.keyboardid.apple.build.vid=0x046d
+micro.menu.keyboardid.apple.build.pid=0xc335
 
 ########## Protocol ##########
 micro.menu.protocol.auto=Auto (I2C & Serial)
@@ -879,6 +915,18 @@ promicro.menu.keyboardid.apple=Apple Keyboard
 promicro.menu.keyboardid.apple.build.vid=0x05ac
 promicro.menu.keyboardid.apple.build.pid=0x0221
 
+promicro.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+promicro.menu.keyboardid.apple.build.vid=0x05ac
+promicro.menu.keyboardid.apple.build.pid=0x0259
+
+promicro.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+promicro.menu.keyboardid.apple.build.vid=0x046d
+promicro.menu.keyboardid.apple.build.pid=0xc316
+
+promicro.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+promicro.menu.keyboardid.apple.build.vid=0x046d
+promicro.menu.keyboardid.apple.build.pid=0xc335
+
 ########## Protocol ##########
 promicro.menu.protocol.auto=Auto (I2C & Serial)
 promicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
@@ -1085,6 +1133,18 @@ cjmcu.menu.keyboardid.apple=Apple Keyboard
 cjmcu.menu.keyboardid.apple.build.vid=0x05ac
 cjmcu.menu.keyboardid.apple.build.pid=0x0221
 
+cjmcu.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+cjmcu.menu.keyboardid.apple.build.vid=0x05ac
+cjmcu.menu.keyboardid.apple.build.pid=0x0259
+
+cjmcu.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+cjmcu.menu.keyboardid.apple.build.vid=0x046d
+cjmcu.menu.keyboardid.apple.build.pid=0xc316
+
+cjmcu.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+cjmcu.menu.keyboardid.apple.build.vid=0x046d
+cjmcu.menu.keyboardid.apple.build.pid=0xc335
+
 ########## Protocol ##########
 cjmcu.menu.protocol.auto=Auto (I2C & Serial)
 cjmcu.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
@@ -1249,6 +1309,18 @@ ssmicro.menu.keyboardid.default.build.pid=0x8036
 ssmicro.menu.keyboardid.apple=Apple Keyboard
 ssmicro.menu.keyboardid.apple.build.vid=0x05ac
 ssmicro.menu.keyboardid.apple.build.pid=0x0221
+
+ssmicro.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+ssmicro.menu.keyboardid.apple.build.vid=0x05ac
+ssmicro.menu.keyboardid.apple.build.pid=0x0259
+
+ssmicro.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+ssmicro.menu.keyboardid.apple.build.vid=0x046d
+ssmicro.menu.keyboardid.apple.build.pid=0xc316
+
+ssmicro.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+ssmicro.menu.keyboardid.apple.build.vid=0x046d
+ssmicro.menu.keyboardid.apple.build.pid=0xc335
 
 ########## Protocol ##########
 ssmicro.menu.protocol.auto=Auto (I2C & Serial)
