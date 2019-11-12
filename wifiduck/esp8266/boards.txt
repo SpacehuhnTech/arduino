@@ -45,11 +45,7 @@ dstike.build.debug_level=
 dstike.menu.debug.disabled=Disabled
 dstike.menu.debug.serial=Serial (115200, newline)
 dstike.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
-
-dstike.menu.protocol.i2c=I2C
-dstike.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C -DI2C_SDA=4 -DI2C_SCL=5
-dstike.menu.protocol.serial=Serial
-dstike.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+dstike.build.protocol_flags=-DENABLE_I2C -DI2C_SDA=4 -DI2C_SCL=5
 
 dstike.build.f_cpu=160000000L
 
