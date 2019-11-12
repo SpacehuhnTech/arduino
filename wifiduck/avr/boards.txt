@@ -52,6 +52,18 @@ dstike.menu.keyboardid.apple=Apple Keyboard
 dstike.menu.keyboardid.apple.build.vid=0x05ac
 dstike.menu.keyboardid.apple.build.pid=0x0221
 
+dstike.menu.keyboardid.apple=Apple Internal Keyboard/Trackpad
+dstike.menu.keyboardid.apple.build.vid=0x05ac
+dstike.menu.keyboardid.apple.build.pid=0x0259
+
+dstike.menu.keyboardid.apple=Logitech HID-Compliant Keyboard
+dstike.menu.keyboardid.apple.build.vid=0x046d
+dstike.menu.keyboardid.apple.build.pid=0xc316
+
+dstike.menu.keyboardid.apple=Logitech G910 Orion Spectrum Mechanical Keyboard
+dstike.menu.keyboardid.apple.build.vid=0x046d
+dstike.menu.keyboardid.apple.build.pid=0xc335
+
 ########## Debug ##########
 dstike.menu.debug.serial=Serial (115200b, newline)
 dstike.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
