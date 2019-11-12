@@ -30,7 +30,7 @@
 
 0. Install the latest version of the [Arduino IDE](https://www.arduino.cc/en/main/software).
 
-### Git
+### Git Method
 
 1. [Install the ESP8266 Arduino Core](https://github.com/esp8266/Arduino#installing-with-boards-manager) - You will need the tools it installes.
 2. Go to your Arduino sketchbook location (you can see and edit the path in the Arduino preferences).
@@ -38,7 +38,7 @@
 4. Clone this repository `git clone https://github.com/spacehuhn/hardware.git` or [download .zip](https://github.com/spacehuhn/Arduino/archive/master.zip) and extract it into the `hardware` folder. 
 The resulting path should look something like this: `../Arduino/hardware/wifiduck/esp8266/...`.
 
-### Boards Manager (coming soon)
+### [Coming Soon!] Boards Manager Method (recommended)
 
 1. Start Arduino and open the Preferences window.
 2. Enter `https://raw.githubusercontent.com/spacehuhn/hardware/master/wifiduck/package_wifiduck_index.json` into the *Additional Board Manager URLs* field. You can add multiple URLs, separating them with commas.
