@@ -14,10 +14,10 @@
           "architecture": "avr",
           "version": "1.8.1.0",
           "category": "Contributed",
-          "url": "https://github.com/spacehuhn/hardware/raw/master/bin/avr-1.8.1.0.zip",
-          "archiveFileName": "avr-1.8.1.0.zip",
-          "checksum": "SHA-256:CHECKSUM",
-          "size": "SIZE",
+          "url": "https://github.com/spacehuhn/hardware/raw/master/bin/wifiduck-avr-1.8.1.0.zip",
+          "archiveFileName": "wifiduck-avr-1.8.1.0.zip",
+          "checksum": "SHA-256:e473d53f3a79874d8eed0c0df99d4c28e60504a212e4f5fe8cd37f067b13f0fd",
+          "size": "225974",
           "help": {
             "online": "https://github.com/spacehuhn/WiFiDuck"
           },
@@ -53,10 +53,10 @@
           "architecture": "esp8266",
           "version": "2.6.0.0",
           "category": "ESP8266",
-          "url": "https://github.com/spacehuhn/hardware/raw/master/bin/esp8266-2.6.0.0.zip",
-          "archiveFileName": "esp8266-2.6.0.0.zip",
-		  "checksum": "SHA-256:CHECKSUM",
-          "size": "SIZE",
+          "url": "https://github.com/spacehuhn/hardware/raw/master/bin/wifiduck-esp8266-2.6.0.0.zip",
+          "archiveFileName": "wifiduck-esp8266-2.6.0.0.zip",
+		  "checksum": "SHA-256:c2dab7a80d44a99ad5f8fd57b55e4e08df194b625b0c504f2aef939827c55df0",
+          "size": "32886780",
           "help": {
             "online": "https://github.com/spacehuhn/WiFiDuck"
           },
