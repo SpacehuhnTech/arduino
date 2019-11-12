@@ -48,7 +48,7 @@ dstike.menu.keyboardid.default=Arduino Leonardo
 dstike.menu.keyboardid.default.build.vid=0x2341
 dstike.menu.keyboardid.default.build.pid=0x8036
 
-dstike.menu.keyboardid.apple=Apple Keyboard
+dstike.menu.keyboardid.apple=Apple Aluminum Keyboard
 dstike.menu.keyboardid.apple.build.vid=0x05ac
 dstike.menu.keyboardid.apple.build.pid=0x0221
 
@@ -117,7 +117,7 @@ atmega32u4.menu.keyboardid.default=Arduino Leonardo
 atmega32u4.menu.keyboardid.default.build.vid=0x2341
 atmega32u4.menu.keyboardid.default.build.pid=0x8036
 
-atmega32u4.menu.keyboardid.apple=Apple Keyboard
+atmega32u4.menu.keyboardid.apple=Apple Aluminum Keyboard
 atmega32u4.menu.keyboardid.apple.build.vid=0x05ac
 atmega32u4.menu.keyboardid.apple.build.pid=0x0221
 
@@ -381,7 +381,7 @@ leonardo.menu.keyboardid.default=Arduino Leonardo
 leonardo.menu.keyboardid.default.build.vid=0x2341
 leonardo.menu.keyboardid.default.build.pid=0x8036
 
-leonardo.menu.keyboardid.apple=Apple Keyboard
+leonardo.menu.keyboardid.apple=Apple Aluminum Keyboard
 leonardo.menu.keyboardid.apple.build.vid=0x05ac
 leonardo.menu.keyboardid.apple.build.pid=0x0221
 
@@ -637,7 +637,7 @@ micro.menu.keyboardid.default=Arduino Leonardo
 micro.menu.keyboardid.default.build.vid=0x2341
 micro.menu.keyboardid.default.build.pid=0x8036
 
-micro.menu.keyboardid.apple=Apple Keyboard
+micro.menu.keyboardid.apple=Apple Aluminum Keyboard
 micro.menu.keyboardid.apple.build.vid=0x05ac
 micro.menu.keyboardid.apple.build.pid=0x0221
 
@@ -911,7 +911,7 @@ promicro.menu.keyboardid.default=Arduino Leonardo
 promicro.menu.keyboardid.default.build.vid=0x2341
 promicro.menu.keyboardid.default.build.pid=0x8036
 
-promicro.menu.keyboardid.apple=Apple Keyboard
+promicro.menu.keyboardid.apple=Apple Aluminum Keyboard
 promicro.menu.keyboardid.apple.build.vid=0x05ac
 promicro.menu.keyboardid.apple.build.pid=0x0221
 
@@ -1129,7 +1129,7 @@ cjmcu.menu.keyboardid.default=Arduino Leonardo
 cjmcu.menu.keyboardid.default.build.vid=0x2341
 cjmcu.menu.keyboardid.default.build.pid=0x8036
 
-cjmcu.menu.keyboardid.apple=Apple Keyboard
+cjmcu.menu.keyboardid.apple=Apple Aluminum Keyboard
 cjmcu.menu.keyboardid.apple.build.vid=0x05ac
 cjmcu.menu.keyboardid.apple.build.pid=0x0221
 
@@ -1306,7 +1306,7 @@ ssmicro.menu.keyboardid.default=Arduino Leonardo
 ssmicro.menu.keyboardid.default.build.vid=0x2341
 ssmicro.menu.keyboardid.default.build.pid=0x8036
 
-ssmicro.menu.keyboardid.apple=Apple Keyboard
+ssmicro.menu.keyboardid.apple=Apple Aluminum Keyboard
 ssmicro.menu.keyboardid.apple.build.vid=0x05ac
 ssmicro.menu.keyboardid.apple.build.pid=0x0221
 
