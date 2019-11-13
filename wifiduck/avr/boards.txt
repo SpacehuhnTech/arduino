@@ -37,7 +37,7 @@ dstike.build.usb_product="USB Keyboard"
 
 dstike.build.f_cpu=16000000L
 dstike.bootloader.extended_fuses=0xCB
-dstike.bootloader.file=caterina/Caterina-promicro16.hex
+dstike.bootloader.file=Caterina-promicro16.hex
 
 dstike.build.protocol_flags=-DENABLE_I2C
 dstike.build.led_flags=-DENABLE_LED -DNEOPIXEL
@@ -60,7 +60,7 @@ dstike.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 dstike.menu.keyboardid.logitechhid.build.vid=0x046d
 dstike.menu.keyboardid.logitechhid.build.pid=0xc316
 
-dstike.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+dstike.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 dstike.menu.keyboardid.logitechgaming.build.vid=0x046d
 dstike.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -107,14 +107,14 @@ atmega32u4.menu.cpu.16MHzatmega32U4=5V, 16 MHz
 
 atmega32u4.menu.cpu.16MHzatmega32U4.build.f_cpu=16000000L
 atmega32u4.menu.cpu.16MHzatmega32U4.bootloader.extended_fuses=0xCB
-atmega32u4.menu.cpu.16MHzatmega32U4.bootloader.file=caterina/Caterina-promicro16.hex
+atmega32u4.menu.cpu.16MHzatmega32U4.bootloader.file=Caterina-promicro16.hex
 
 ########## 3.3V / 8MHz ##########
 atmega32u4.menu.cpu.8MHzatmega32U4=3.3V, 8 MHz
 
 atmega32u4.menu.cpu.8MHzatmega32U4.build.f_cpu=8000000L
 atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.extended_fuses=0xFE
-atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.file=caterina/Caterina-promicro8.hex
+atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.file=Caterina-promicro8.hex
 
 ########## Keyboard ID ##########
 atmega32u4.menu.keyboardid.default=Arduino Leonardo
@@ -133,7 +133,7 @@ atmega32u4.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 atmega32u4.menu.keyboardid.logitechhid.build.vid=0x046d
 atmega32u4.menu.keyboardid.logitechhid.build.pid=0xc316
 
-atmega32u4.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+atmega32u4.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 atmega32u4.menu.keyboardid.logitechgaming.build.vid=0x046d
 atmega32u4.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -382,7 +382,7 @@ atmega32u4.build.usb_product="USB Keyboard"
 
 leonardo.build.f_cpu=16000000L
 leonardo.bootloader.extended_fuses=0xCB
-leonardo.bootloader.file=caterina/Caterina-Leonardo.hex
+leonardo.bootloader.file=Caterina-Leonardo.hex
 
 ########## Keyboard ID ##########
 leonardo.menu.keyboardid.default=Arduino Leonardo
@@ -401,7 +401,7 @@ leonardo.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 leonardo.menu.keyboardid.logitechhid.build.vid=0x046d
 leonardo.menu.keyboardid.logitechhid.build.pid=0xc316
 
-leonardo.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+leonardo.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 leonardo.menu.keyboardid.logitechgaming.build.vid=0x046d
 leonardo.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -642,7 +642,7 @@ atmega32u4.build.usb_product="USB Keyboard"
 
 micro.build.f_cpu=16000000L
 micro.bootloader.extended_fuses=0xCB
-micro.bootloader.file=caterina/Caterina-Micro.hex
+micro.bootloader.file=Caterina-Micro.hex
 
 ########## Keyboard ID ##########
 micro.menu.keyboardid.default=Arduino Leonardo
@@ -661,7 +661,7 @@ micro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 micro.menu.keyboardid.logitechhid.build.vid=0x046d
 micro.menu.keyboardid.logitechhid.build.pid=0xc316
 
-micro.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+micro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 micro.menu.keyboardid.logitechgaming.build.vid=0x046d
 micro.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -913,14 +913,14 @@ promicro.menu.cpu.16MHzatmega32U4=5V, 16 MHz
 
 promicro.menu.cpu.16MHzatmega32U4.build.f_cpu=16000000L
 promicro.menu.cpu.16MHzatmega32U4.bootloader.extended_fuses=0xCB
-promicro.menu.cpu.16MHzatmega32U4.bootloader.file=caterina/Caterina-promicro16.hex
+promicro.menu.cpu.16MHzatmega32U4.bootloader.file=Caterina-promicro16.hex
 
 ########## 3.3V / 8MHz ##########
 promicro.menu.cpu.8MHzatmega32U4=3.3V, 8 MHz
 
 promicro.menu.cpu.8MHzatmega32U4.build.f_cpu=8000000L
 promicro.menu.cpu.8MHzatmega32U4.bootloader.extended_fuses=0xFE
-promicro.menu.cpu.8MHzatmega32U4.bootloader.file=caterina/Caterina-promicro8.hex
+promicro.menu.cpu.8MHzatmega32U4.bootloader.file=Caterina-promicro8.hex
 
 ########## Keyboard ID ##########
 promicro.menu.keyboardid.default=Arduino Leonardo
@@ -939,7 +939,7 @@ promicro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 promicro.menu.keyboardid.logitechhid.build.vid=0x046d
 promicro.menu.keyboardid.logitechhid.build.pid=0xc316
 
-promicro.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+promicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 promicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 promicro.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -1142,7 +1142,7 @@ cjmcu.build.usb_product="USB Keyboard"
 ########## 5V / 16MHz ##########
 cjmcu.build.f_cpu=16000000L
 cjmcu.bootloader.extended_fuses=0xCB
-cjmcu.bootloader.file=caterina/Caterina-promicro16.hex
+cjmcu.bootloader.file=Caterina-promicro16.hex
 
 ########## Keyboard ID ##########
 cjmcu.menu.keyboardid.default=Arduino Leonardo
@@ -1161,7 +1161,7 @@ cjmcu.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 cjmcu.menu.keyboardid.logitechhid.build.vid=0x046d
 cjmcu.menu.keyboardid.logitechhid.build.pid=0xc316
 
-cjmcu.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+cjmcu.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 cjmcu.menu.keyboardid.logitechgaming.build.vid=0x046d
 cjmcu.menu.keyboardid.logitechgaming.build.pid=0xc335
 
@@ -1323,7 +1323,7 @@ ssmicro.build.usb_product="USB Keyboard"
 ########## 3.3V / 8MHz ##########
 ssmicro.build.f_cpu=8000000L
 ssmicro.bootloader.extended_fuses=0xFE
-ssmicro.bootloader.file=caterina/Caterina-promicro8.hex
+ssmicro.bootloader.file=Caterina-promicro8.hex
 
 ########## Keyboard ID ##########
 ssmicro.menu.keyboardid.default=Arduino Leonardo
@@ -1342,7 +1342,7 @@ ssmicro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 ssmicro.menu.keyboardid.logitechhid.build.vid=0x046d
 ssmicro.menu.keyboardid.logitechhid.build.pid=0xc316
 
-ssmicro.menu.keyboardid.logitechgaming=Logitech G910 Orion Spectrum Mechanical Keyboard
+ssmicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 ssmicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 ssmicro.menu.keyboardid.logitechgaming.build.pid=0xc335
 
