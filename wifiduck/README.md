@@ -21,10 +21,6 @@
 * LOLIN(WEMOS) D1 Mini
 * LOLIN(WEMOS) D1 Mini Pro
 * LOLIN(WEMOS) D1 Mini Lite
-			
-* ESP8266
-* ESP8285
-* DSTIKE WiFi Duck (ESP8266)
 
 ## Installation 
 
