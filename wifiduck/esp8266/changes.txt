@@ -5,6 +5,7 @@ boards.txt
 
 platform.txt
  - Added compiler options
+ - Changed name
 
 # This can be overriden in boards.txt
 build.debug_flags=
