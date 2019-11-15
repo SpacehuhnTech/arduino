@@ -30,15 +30,15 @@ menu.ssl=SSL Support
 ##############################################################
 dstike.name=DSTIKE WiFi Duck (ESP8266)
 dstike.build.board=ESP8266_NODEMCU
+dstike.build.variant=dstike
 dstike.upload.tool=esptool
 dstike.upload.maximum_data_size=81920
 dstike.upload.wait_for_upload_port=true
-dstike.upload.erase_cmd=flash_id
+dstike.upload.erase_cmd=
 dstike.serial.disableDTR=true
 dstike.serial.disableRTS=true
 dstike.build.mcu=esp8266
 dstike.build.core=esp8266
-dstike.build.variant=dstike
 dstike.build.spiffs_pagesize=256
 dstike.build.debug_port=
 dstike.build.debug_level=
@@ -56,8 +56,8 @@ dstike.build.exception_flags=-fno-exceptions
 dstike.build.sslflags=
 dstike.upload.resetmethod=--before default_reset --after hard_reset
 dstike.build.flash_freq=40
-dstike.build.flash_mode=dout
-dstike.build.flash_flags=-DFLASHMODE_DOUT
+dstike.build.flash_mode=dio
+dstike.build.flash_flags=-DFLASHMODE_DIO
 
 dstike.menu.eesz.4M3M=4MB (FS:3MB OTA:~512KB)
 dstike.menu.eesz.4M3M.build.flash_size=4M
@@ -90,16 +90,10 @@ dstike.menu.eesz.4M1M.build.spiffs_start=0x300000
 dstike.menu.eesz.4M1M.build.spiffs_end=0x3FA000
 dstike.menu.eesz.4M1M.build.spiffs_blocksize=8192
 
-dstike.build.spiffs_pagesize=256
-dstike.upload.maximum_size=1044464
-dstike.build.rfcal_addr=0x3FC000
-dstike.build.spiffs_start=0x100000
-dstike.build.spiffs_end=0x3FA000
-dstike.build.spiffs_blocksize=8192
 dstike.build.sdk=NONOSDK22x_191024
 dstike.build.lwip_include=lwip2/include
-dstike.build.lwip_lib=-llwip2-1460-feat
-dstike.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+dstike.build.lwip_lib=-llwip2-536-feat
+dstike.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
 dstike.build.debug_port=
 dstike.build.debug_level=
 
@@ -110,7 +104,7 @@ dstike.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -D
 dstike.build.protocol_flags=-DENABLE_I2C -DI2C_SDA=4 -DI2C_SCL=5
 
 dstike.menu.wipe.none=Only Sketch
-dstike.menu.wipe.none.upload.erase_cmd=flash_id
+dstike.menu.wipe.none.upload.erase_cmd=
 dstike.menu.wipe.sdk=Sketch + WiFi Settings
 dstike.menu.wipe.sdk.upload.erase_cmd=erase_region "{build.rfcal_addr}" 0x4000
 dstike.menu.wipe.all=All Flash Contents
