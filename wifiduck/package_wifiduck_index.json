@@ -55,8 +55,8 @@
           "category": "ESP8266",
           "url": "https://github.com/spacehuhn/hardware/releases/download/v1.0.1/wifiduck-esp8266-2.6.1.zip",
           "archiveFileName": "wifiduck-esp8266-2.6.1.zip",
-		  "checksum": "SHA-256:157137cad25d865b40f57ccf53aec493e1cae40827c4da2303be1ae7d5d44916",
-          "size": "32935408",
+		  "checksum": "SHA-256:63bf314a7247d6bf5ad644279a0ad5c8ccb91fd90e3018a3c6b713364b480383",
+          "size": "32935414",
           "help": {
             "online": "https://github.com/spacehuhn/WiFiDuck"
           },
