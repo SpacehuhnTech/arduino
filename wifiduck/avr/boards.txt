@@ -378,7 +378,7 @@ leonardo.build.board=AVR_ATMEGA32U4
 leonardo.build.core=arduino
 leonardo.build.variant=leonardo
 leonardo.build.mcu=atmega32u4
-atmega32u4.build.usb_product="USB Keyboard"
+leonardo.build.usb_product="USB Keyboard"
 
 leonardo.build.f_cpu=16000000L
 leonardo.bootloader.extended_fuses=0xCB
@@ -638,7 +638,7 @@ micro.build.board=AVR_ATMEGA32U4
 micro.build.core=arduino
 micro.build.variant=micro
 micro.build.mcu=atmega32u4
-atmega32u4.build.usb_product="USB Keyboard"
+micro.build.usb_product="USB Keyboard"
 
 micro.build.f_cpu=16000000L
 micro.bootloader.extended_fuses=0xCB
