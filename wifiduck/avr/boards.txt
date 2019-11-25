@@ -943,7 +943,7 @@ promicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 promicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 promicro.menu.keyboardid.logitechgaming.build.pid=0xc335
 
-promicro.menu.keyboardid.ms=promicrosoft Keyboard
+promicro.menu.keyboardid.ms=Microsoft Keyboard
 promicro.menu.keyboardid.ms.build.vid=0x045e
 promicro.menu.keyboardid.ms.build.pid=0xfff8
 
@@ -1165,7 +1165,7 @@ cjmcu.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 cjmcu.menu.keyboardid.logitechgaming.build.vid=0x046d
 cjmcu.menu.keyboardid.logitechgaming.build.pid=0xc335
 
-cjmcu.menu.keyboardid.ms=cjmcusoft Keyboard
+cjmcu.menu.keyboardid.ms=Microsoft Keyboard
 cjmcu.menu.keyboardid.ms.build.vid=0x045e
 cjmcu.menu.keyboardid.ms.build.pid=0xfff8
 
@@ -1346,7 +1346,7 @@ ssmicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 ssmicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 ssmicro.menu.keyboardid.logitechgaming.build.pid=0xc335
 
-ssmicro.menu.keyboardid.ms=ssmicrosoft Keyboard
+ssmicro.menu.keyboardid.ms=Microsoft Keyboard
 ssmicro.menu.keyboardid.ms.build.vid=0x045e
 ssmicro.menu.keyboardid.ms.build.pid=0xfff8
 
