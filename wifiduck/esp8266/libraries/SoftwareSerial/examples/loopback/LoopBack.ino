@@ -31,20 +31,21 @@
 #define HALFDUPLEX 1
 
 #ifdef ESP32
-constexpr int IUTBITRATE = 64000;
+constexpr int IUTBITRATE = 57600;
 #else
 constexpr int IUTBITRATE = 153600;
 #endif
 
 #if defined(ESP8266)
-constexpr SoftwareSerialConfig swSerialConfig = SWSERIAL_8E2;
-constexpr SerialConfig hwSerialConfig = SERIAL_8E2;
+constexpr SoftwareSerialConfig swSerialConfig = SWSERIAL_8E1;
+constexpr SerialConfig hwSerialConfig = SERIAL_8E1;
 #elif defined(ESP32)
-constexpr SoftwareSerialConfig swSerialConfig = SWSERIAL_8E2;
-constexpr uint32_t hwSerialConfig = SERIAL_8E2;
+constexpr SoftwareSerialConfig swSerialConfig = SWSERIAL_8E1;
+constexpr uint32_t hwSerialConfig = SERIAL_8E1;
 #else
 constexpr unsigned swSerialConfig = 3;
 #endif
+constexpr bool invert = false;
 
 constexpr int BLOCKSIZE = 16; // use fractions of 256
 
@@ -88,7 +89,7 @@ HardwareSerial& logger(Serial);
 void setup() {
 #if defined(ESP8266)
 #if defined(HWLOOPBACK) || defined(HWSOURCESINK) || defined(HWSOURCESWSINK)
-    Serial.begin(IUTBITRATE, hwSerialConfig);
+    Serial.begin(IUTBITRATE, hwSerialConfig, SERIAL_FULL, 1, invert);
     Serial.swap();
     Serial.setRxBufferSize(2 * BLOCKSIZE);
     logger.begin(9600, SWSERIAL_8N1, -1, TX);
@@ -97,11 +98,11 @@ void setup() {
 #endif
 #elif defined(ESP32)
 #if defined(HWLOOPBACK) || defined(HWSOURCESWSINK)
-    Serial2.begin(IUTBITRATE, hwSerialConfig);
+    Serial2.begin(IUTBITRATE, hwSerialConfig, D4, D3, invert);
     Serial2.setRxBufferSize(2 * BLOCKSIZE);
     logger.begin(9600);
 #elif defined(HWSOURCESINK)
-    serialIUT.begin(IUTBITRATE, hwSerialConfig, D5, D6);
+    serialIUT.begin(IUTBITRATE, hwSerialConfig, D5, D6, invert);
     serialIUT.setRxBufferSize(2 * BLOCKSIZE);
     logger.begin(9600);
 #else
@@ -113,12 +114,12 @@ void setup() {
 
 #if !defined(HWSOURCESINK)
 #if defined(ESP8266)
-    serialIUT.begin(IUTBITRATE, swSerialConfig, D5, D6, false, 4 * BLOCKSIZE);
+    serialIUT.begin(IUTBITRATE, swSerialConfig, D5, D6, invert, 4 * BLOCKSIZE);
 #ifdef HALFDUPLEX
     serialIUT.enableIntTx(false);
 #endif
 #elif defined(ESP32)
-    serialIUT.begin(IUTBITRATE, swSerialConfig, D5, D6, false, 2 * BLOCKSIZE);
+    serialIUT.begin(IUTBITRATE, swSerialConfig, D5, D6, invert, 2 * BLOCKSIZE);
 #ifdef HALFDUPLEX
     serialIUT.enableIntTx(false);
 #endif
@@ -188,14 +189,10 @@ void loop() {
     inCnt = 0;
     while ((ESP.getCycleCount() - deadlineStart) < (1000000 * 10 * BLOCKSIZE) / IUTBITRATE * 8 * ESP.getCpuFreqMHz()) {
         int avail = hwSerial.available();
-        if (0 >= avail) {
-            delay(1);
-            continue;
-        }
         inCnt += hwSerial.readBytes(&inBuf[inCnt], min(avail, min(BLOCKSIZE - inCnt, hwSerial.availableForWrite())));
         if (inCnt >= BLOCKSIZE) { break; }
         // wait for more outstanding bytes to trickle in
-        deadlineStart = ESP.getCycleCount();
+        if (avail) deadlineStart = ESP.getCycleCount();
     }
     hwSerial.write(inBuf, inCnt);
 #endif
@@ -216,17 +213,19 @@ void loop() {
                 ++rxErrors;
                 expected = -1;
             }
+#ifndef HWSOURCESINK
             if ((serialIUT.readParity() ^ static_cast<bool>(swSerialConfig & 010)) != serialIUT.parityEven(r))
             {
                 ++rxParityErrors;
             }
+#endif
             ++rxCount;
             ++inCnt;
         }
 
         if (inCnt >= BLOCKSIZE) { break; }
         // wait for more outstanding bytes to trickle in
-        deadlineStart = ESP.getCycleCount();
+        if (avail) deadlineStart = ESP.getCycleCount();
     }
 
     const uint32_t interval = micros() - start;

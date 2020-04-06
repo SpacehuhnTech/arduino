@@ -10,7 +10,7 @@ menu.ESPModule=Module
 menu.debug=Debug
 menu.protocol=Protocol
 
-menu.led=Builtin Led
+#menu.led=Builtin Led
 menu.baud=Upload Speed
 menu.xtal=CPU Frequency
 menu.CrystalFreq=Crystal Frequency

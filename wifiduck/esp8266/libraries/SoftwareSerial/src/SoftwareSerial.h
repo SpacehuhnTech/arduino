@@ -91,7 +91,7 @@ public:
     /// Ctor to set defaults for pins.
     /// @param rxPin the GPIO pin used for RX
     /// @param txPin -1 for onewire protocol, GPIO pin used for twowire TX
-    SoftwareSerial(int8_t rxPin, int8_t txPin = -1);
+    SoftwareSerial(int8_t rxPin, int8_t txPin = -1, bool invert = false);
     SoftwareSerial(const SoftwareSerial&) = delete;
     SoftwareSerial& operator= (const SoftwareSerial&) = delete;
     virtual ~SoftwareSerial();
@@ -105,9 +105,21 @@ public:
     /// @param isrBufCapacity 0: derived from bufCapacity. The capacity of the internal asynchronous
     ///	       bit receive buffer, a suggested size is bufCapacity times the sum of
     ///	       start, data, parity and stop bit count.
-    void begin(uint32_t baud, SoftwareSerialConfig config = SWSERIAL_8N1,
-        int8_t rxPin = -1, int8_t txPin = -1,
-        bool invert = false, int bufCapacity = 64, int isrBufCapacity = 0);
+    void begin(uint32_t baud, SoftwareSerialConfig config,
+        int8_t rxPin, int8_t txPin, bool invert,
+        int bufCapacity = 64, int isrBufCapacity = 0);
+    void begin(uint32_t baud, SoftwareSerialConfig config,
+        int8_t rxPin, int8_t txPin) {
+        begin(baud, config, rxPin, txPin, m_invert);
+    }
+    void begin(uint32_t baud, SoftwareSerialConfig config,
+        int8_t rxPin) {
+        begin(baud, config, rxPin, m_txPin, m_invert);
+    }
+    void begin(uint32_t baud, SoftwareSerialConfig config = SWSERIAL_8N1) {
+        begin(baud, config, m_rxPin, m_txPin, m_invert);
+    }
+
     uint32_t baudRate();
     /// Transmit control pin.
     void setTransmitEnablePin(int8_t txEnablePin);
@@ -183,14 +195,14 @@ private:
         m_periodDuration = 0;
         m_periodStart = ESP.getCycleCount();
     }
-    // If asyn, it's legal to exceed the deadline, for instance,
+    // If sync is false, it's legal to exceed the deadline, for instance,
     // by enabling interrupts.
-    void preciseDelay(bool asyn, uint32_t savedPS);
+    void preciseDelay(bool sync);
     // If withStopBit is set, either cycle contains a stop bit.
     // If dutyCycle == 0, the level is not forced to HIGH.
     // If offCycle == 0, the level remains unchanged from dutyCycle.
     void writePeriod(
-        uint32_t dutyCycle, uint32_t offCycle, bool withStopBit, uint32_t savedPS);
+        uint32_t dutyCycle, uint32_t offCycle, bool withStopBit);
     bool isValidGPIOpin(int8_t pin);
     /* check m_rxValid that calling is safe */
     void rxBits();
@@ -220,6 +232,7 @@ private:
     uint32_t m_periodStart;
     uint32_t m_periodDuration;
     bool m_intTxEnabled;
+    uint32_t m_savedPS = 0;
     std::unique_ptr<circular_queue<uint8_t> > m_buffer;
     std::unique_ptr<circular_queue<uint8_t> > m_parityBuffer;
     uint8_t m_parityInPos;

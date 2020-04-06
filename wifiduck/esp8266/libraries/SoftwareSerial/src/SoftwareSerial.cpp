@@ -34,13 +34,13 @@ SoftwareSerial::SoftwareSerial() {
     m_isrOverflow = false;
 }
 
-SoftwareSerial::SoftwareSerial(int8_t rxPin, int8_t txPin)
+SoftwareSerial::SoftwareSerial(int8_t rxPin, int8_t txPin, bool invert)
 {
     m_isrOverflow = false;
     m_rxPin = rxPin;
     m_txPin = txPin;
+    m_invert = invert;
 }
-
 
 SoftwareSerial::~SoftwareSerial() {
     end();
@@ -64,15 +64,25 @@ void SoftwareSerial::begin(uint32_t baud, SoftwareSerialConfig config,
     if (-1 != txPin) m_txPin = txPin;
     m_oneWire = (m_rxPin == m_txPin);
     m_invert = invert;
+    m_dataBits = 5 + (config & 07);
+    m_parityMode = static_cast<SoftwareSerialParity>(config & 070);
+    m_stopBits = 1 + ((config & 0300) ? 1 : 0);
+    m_pduBits = m_dataBits + static_cast<bool>(m_parityMode) + m_stopBits;
+    m_bit_us = (1000000 + baud / 2) / baud;
+    m_bitCycles = (ESP.getCpuFreqMHz() * 1000000 + baud / 2) / baud;
+    m_intTxEnabled = true;
     if (isValidGPIOpin(m_rxPin)) {
         std::unique_ptr<circular_queue<uint8_t> > buffer(new circular_queue<uint8_t>((bufCapacity > 0) ? bufCapacity : 64));
         m_buffer = move(buffer);
-        std::unique_ptr<circular_queue<uint8_t> > parityBuffer(new circular_queue<uint8_t>((bufCapacity > 0) ? (bufCapacity + 7) / 8 : 8));
-        m_parityBuffer = move(parityBuffer);
-        m_parityInPos = m_parityOutPos = 1;
+        if (m_parityMode)
+        {
+            std::unique_ptr<circular_queue<uint8_t> > parityBuffer(new circular_queue<uint8_t>((bufCapacity > 0) ? (bufCapacity + 7) / 8 : 8));
+            m_parityBuffer = move(parityBuffer);
+            m_parityInPos = m_parityOutPos = 1;
+        }
         std::unique_ptr<circular_queue<uint32_t> > isrBuffer(new circular_queue<uint32_t>((isrBufCapacity > 0) ? isrBufCapacity : (sizeof(uint8_t) * 8 + 2) * bufCapacity));
         m_isrBuffer = move(isrBuffer);
-        if (m_buffer && m_parityBuffer && m_isrBuffer) {
+        if (m_buffer && (!m_parityMode || m_parityBuffer) && m_isrBuffer) {
             m_rxValid = true;
             pinMode(m_rxPin, INPUT_PULLUP);
         }
@@ -89,14 +99,6 @@ void SoftwareSerial::begin(uint32_t baud, SoftwareSerialConfig config,
             digitalWrite(m_txPin, !m_invert);
         }
     }
-
-    m_dataBits = 5 + (config & 07);
-    m_parityMode = static_cast<SoftwareSerialParity>(config & 070);
-    m_stopBits = 1 + ((config & 0300) ? 1 : 0);
-    m_pduBits = m_dataBits + static_cast<bool>(m_parityMode) + m_stopBits;
-    m_bit_us = (1000000 + baud / 2) / baud;
-    m_bitCycles = (ESP.getCpuFreqMHz() * 1000000 + baud / 2) / baud;
-    m_intTxEnabled = true;
     if (!m_rxEnabled) { enableRx(true); }
 }
 
@@ -107,9 +109,7 @@ void SoftwareSerial::end()
     if (m_buffer) {
         m_buffer.reset();
     }
-    if (m_parityBuffer) {
-        m_parityBuffer.reset();
-    }
+    m_parityBuffer.reset();
     if (m_isrBuffer) {
         m_isrBuffer.reset();
     }
@@ -174,12 +174,15 @@ int SoftwareSerial::read() {
         if (!m_buffer->available()) { return -1; }
     }
     auto val = m_buffer->pop();
-    m_lastReadParity = m_parityBuffer->peek() & m_parityOutPos;
-    m_parityOutPos <<= 1;
-    if (!m_parityOutPos)
+    if (m_parityBuffer)
     {
-        m_parityOutPos = 1;
-        m_parityBuffer->pop();
+        m_lastReadParity = m_parityBuffer->peek() & m_parityOutPos;
+        m_parityOutPos <<= 1;
+        if (!m_parityOutPos)
+        {
+            m_parityOutPos = 1;
+            m_parityBuffer->pop();
+        }
     }
     return val;
 }
@@ -190,7 +193,7 @@ size_t SoftwareSerial::readBytes(uint8_t * buffer, size_t size) {
         rxBits();
         size = m_buffer->pop_n(buffer, size);
     }
-    if (0 != size) {
+    if (m_parityBuffer && 0 != size) {
         uint32_t parityBits = size;
         while (m_parityOutPos >>= 1) ++parityBits;
         m_parityOutPos = (1 << (parityBits % 8));
@@ -210,40 +213,38 @@ int SoftwareSerial::available() {
     return avail;
 }
 
-void ICACHE_RAM_ATTR SoftwareSerial::preciseDelay(bool asyn, uint32_t savedPS) {
-    if (asyn)
+void ICACHE_RAM_ATTR SoftwareSerial::preciseDelay(bool sync) {
+    if (!sync)
     {
-        if (!m_intTxEnabled) { xt_wsr_ps(savedPS); }
+        // Reenable interrupts while delaying to avoid other tasks piling up
+        if (!m_intTxEnabled) { xt_wsr_ps(m_savedPS); }
         auto expired = ESP.getCycleCount() - m_periodStart;
-        auto micro_s = expired < m_periodDuration ? (m_periodDuration - expired) / ESP.getCpuFreqMHz() : 0;
-        delay(micro_s / 1000);
+        if (expired < m_periodDuration)
+        {
+            auto ms = (m_periodDuration - expired) / ESP.getCpuFreqMHz() / 1000UL;
+            if (ms) delay(ms);
+        }
+        // Disable interrupts again
+        if (!m_intTxEnabled) { m_savedPS = xt_rsil(15); }
     }
-    while ((ESP.getCycleCount() - m_periodStart) < m_periodDuration) { if (asyn) optimistic_yield(10000); }
-    if (asyn)
-    {
-        resetPeriodStart();
-        if (!m_intTxEnabled) { savedPS = xt_rsil(15); }
-    }
+    while ((ESP.getCycleCount() - m_periodStart) < m_periodDuration) { if (!sync) optimistic_yield(10000); }
+    resetPeriodStart();
 }
 
 void ICACHE_RAM_ATTR SoftwareSerial::writePeriod(
-    uint32_t dutyCycle, uint32_t offCycle, bool withStopBit, uint32_t savedPS) {
-    preciseDelay(false, savedPS);
-    if (dutyCycle) {
+    uint32_t dutyCycle, uint32_t offCycle, bool withStopBit) {
+    preciseDelay(true);
+    if (dutyCycle)
+    {
         digitalWrite(m_txPin, HIGH);
         m_periodDuration += dutyCycle;
-        bool asyn = withStopBit && !m_invert;
-        // Reenable interrupts while delaying to avoid other tasks piling up
-        if (asyn || offCycle) preciseDelay(asyn, savedPS);
-        // Disable interrupts again
+        if (offCycle || (withStopBit && !m_invert)) preciseDelay(!withStopBit || m_invert);
     }
-    if (offCycle) {
+    if (offCycle)
+    {
         digitalWrite(m_txPin, LOW);
         m_periodDuration += offCycle;
-        bool asyn = withStopBit && m_invert;
-        // Reenable interrupts while delaying to avoid other tasks piling up
-        if (asyn) preciseDelay(asyn, savedPS);
-        // Disable interrupts again
+        if (withStopBit && m_invert) preciseDelay(false);
     }
 }
 
@@ -266,58 +267,54 @@ size_t ICACHE_RAM_ATTR SoftwareSerial::write(const uint8_t * buffer, size_t size
     if (m_txEnableValid) {
         digitalWrite(m_txEnablePin, HIGH);
     }
-    // Stop bit : LOW if inverted logic, otherwise HIGH
+    // Stop bit: if inverted, LOW, otherwise HIGH
     bool b = !m_invert;
-    // Force line level on entry
-    uint32_t dutyCycle = b;
-    uint32_t offCycle = m_invert;
-    uint32_t savedPS = 0;
+    uint32_t dutyCycle = 0;
+    uint32_t offCycle = 0;
     if (!m_intTxEnabled) {
         // Disable interrupts in order to get a clean transmit timing
-        savedPS = xt_rsil(15);
+        m_savedPS = xt_rsil(15);
     }
-    resetPeriodStart();
     const uint32_t dataMask = ((1UL << m_dataBits) - 1);
-    for (size_t cnt = 0; cnt < size; ++cnt, ++buffer) {
-        bool withStopBit = true;
-        uint8_t byte = (m_invert ? ~*buffer : *buffer) & dataMask;
+    bool withStopBit = true;
+    resetPeriodStart();
+    for (size_t cnt = 0; cnt < size; ++cnt) {
+        uint8_t byte = ~buffer[cnt] & dataMask;
         // push LSB start-data-parity-stop bit pattern into uint32_t
-        // Stop bits : LOW if inverted logic, otherwise HIGH
-        uint32_t word = m_invert ? 0UL : ~0UL << (m_dataBits + static_cast<bool>(parity));
+        // Stop bits: HIGH
+        uint32_t word = ~0UL;
         // parity bit, if any
-        if (parity)
+        if (parity && m_parityMode)
         {
             uint32_t parityBit;
             switch (parity)
             {
             case SWSERIAL_PARITY_EVEN:
-                parityBit = parityEven(byte);
-                break;
-            case SWSERIAL_PARITY_ODD:
                 parityBit = !parityEven(byte);
                 break;
+            case SWSERIAL_PARITY_ODD:
+                parityBit = parityEven(byte);
+                break;
             case SWSERIAL_PARITY_MARK:
-                parityBit = !m_invert;
+                parityBit = false;
                 break;
             case SWSERIAL_PARITY_SPACE:
-                parityBit = m_invert;
-                break;
-            default:
                 // suppresses warning parityBit uninitialized
-                parityBit = 0;
+            default:
+                parityBit = true;
                 break;
             }
-            word |= parityBit << m_dataBits;
+            word ^= parityBit << m_dataBits;
         }
-        word |= byte;
-        // Start bit : HIGH if inverted logic, otherwise LOW
+        word ^= byte;
+        // Stop bit: LOW
         word <<= 1;
-        word |= m_invert;
+        if (m_invert) word = ~word;
         for (int i = 0; i <= m_pduBits; ++i) {
             bool pb = b;
-            b = word & (1 << i);
+            b = word & (1UL << i);
             if (!pb && b) {
-                writePeriod(dutyCycle, offCycle, withStopBit, savedPS);
+                writePeriod(dutyCycle, offCycle, withStopBit);
                 withStopBit = false;
                 dutyCycle = offCycle = 0;
             }
@@ -328,11 +325,12 @@ size_t ICACHE_RAM_ATTR SoftwareSerial::write(const uint8_t * buffer, size_t size
                 offCycle += m_bitCycles;
             }
         }
+        withStopBit = true;
     }
-    writePeriod(dutyCycle, offCycle, true, savedPS);
+    writePeriod(dutyCycle, offCycle, true);
     if (!m_intTxEnabled) {
         // restore the interrupt state
-        xt_wsr_ps(savedPS);
+        xt_wsr_ps(m_savedPS);
     }
     if (m_txEnableValid) {
         digitalWrite(m_txEnablePin, LOW);
@@ -343,8 +341,11 @@ size_t ICACHE_RAM_ATTR SoftwareSerial::write(const uint8_t * buffer, size_t size
 void SoftwareSerial::flush() {
     if (!m_rxValid) { return; }
     m_buffer->flush();
-    m_parityInPos = m_parityOutPos = 1;
-    m_parityBuffer->flush();
+    if (m_parityBuffer)
+    {
+        m_parityInPos = m_parityOutPos = 1;
+        m_parityBuffer->flush();
+    }
 }
 
 bool SoftwareSerial::overflow() {
@@ -360,7 +361,7 @@ int SoftwareSerial::peek() {
         if (!m_buffer->available()) return -1;
     }
     auto val = m_buffer->peek();
-    m_lastReadParity = m_parityBuffer->peek() & m_parityOutPos;
+    if (m_parityBuffer) m_lastReadParity = m_parityBuffer->peek() & m_parityOutPos;
     return val;
 }
 
@@ -420,7 +421,7 @@ void SoftwareSerial::rxBits(const uint32_t & isrCycle) {
             continue;
         }
         // parity bit
-        if (static_cast<bool>(m_parityMode) && m_rxCurBit == (m_dataBits - 1)) {
+        if (m_parityMode && m_rxCurBit == (m_dataBits - 1)) {
             ++m_rxCurBit;
             --bits;
             m_rxCurParity = level;
@@ -438,19 +439,22 @@ void SoftwareSerial::rxBits(const uint32_t & isrCycle) {
             if (level)
             {
                 m_rxCurByte >>= (sizeof(uint8_t) * 8 - m_dataBits);
-                if (m_rxCurParity) {
-                    m_parityBuffer->pushpeek() |= m_parityInPos;
-                }
-                else {
-                    m_parityBuffer->pushpeek() &= ~m_parityInPos;
-                }
-                m_parityInPos <<= 1;
-                if (!m_parityInPos)
+                if (m_parityBuffer)
                 {
-                    m_parityBuffer->push();
-                    m_parityInPos = 1;
+                    if (m_rxCurParity) {
+                        m_parityBuffer->pushpeek() |= m_parityInPos;
+                    }
+                    else {
+                        m_parityBuffer->pushpeek() &= ~m_parityInPos;
+                    }
+                    m_parityInPos <<= 1;
+                    if (!m_parityInPos)
+                    {
+                        m_parityBuffer->push();
+                        m_parityInPos = 1;
+                    }
                 }
-                m_buffer->push(m_rxCurByte);
+                if (!m_buffer->push(m_rxCurByte)) m_overflow = true;
             }
             m_rxCurBit = m_pduBits;
             // reset to 0 is important for masked bit logic
