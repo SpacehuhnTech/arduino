@@ -90,7 +90,6 @@ dstike.menu.eesz.4M1M.build.spiffs_start=0x300000
 dstike.menu.eesz.4M1M.build.spiffs_end=0x3FA000
 dstike.menu.eesz.4M1M.build.spiffs_blocksize=8192
 
-dstike.build.sdk=NONOSDK22x_191024
 dstike.build.lwip_include=lwip2/include
 dstike.build.lwip_lib=-llwip2-536-feat
 dstike.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
@@ -458,12 +457,14 @@ generic.menu.led.15=15
 generic.menu.led.15.build.led=-DLED_BUILTIN=15
 generic.menu.led.16=16
 generic.menu.led.16.build.led=-DLED_BUILTIN=16
-generic.menu.sdk.nonosdk_191024=nonos-sdk 2.2.1+111 (191024)
-generic.menu.sdk.nonosdk_191024.build.sdk=NONOSDK22x_191024
-generic.menu.sdk.nonosdk_191105=nonos-sdk 2.2.1+113 (191105)
-generic.menu.sdk.nonosdk_191105.build.sdk=NONOSDK22x_191105
 generic.menu.sdk.nonosdk_190703=nonos-sdk 2.2.1+100 (190703)
 generic.menu.sdk.nonosdk_190703.build.sdk=NONOSDK22x_190703
+generic.menu.sdk.nonosdk_191122=nonos-sdk 2.2.1+119 (191122)
+generic.menu.sdk.nonosdk_191122.build.sdk=NONOSDK22x_191122
+generic.menu.sdk.nonosdk_191105=nonos-sdk 2.2.1+113 (191105)
+generic.menu.sdk.nonosdk_191105.build.sdk=NONOSDK22x_191105
+generic.menu.sdk.nonosdk_191024=nonos-sdk 2.2.1+111 (191024)
+generic.menu.sdk.nonosdk_191024.build.sdk=NONOSDK22x_191024
 generic.menu.sdk.nonosdk221=nonos-sdk 2.2.1 (legacy)
 generic.menu.sdk.nonosdk221.build.sdk=NONOSDK221
 generic.menu.sdk.nonosdk3v0=nonos-sdk pre-3 (180626 known issues)
