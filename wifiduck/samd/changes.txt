@@ -1,0 +1,38 @@
+- Based on Adafruit SAMD core
+- Replaced "cores/arduino" with folder from Arduino SAMD core
+- Replaced "libraries" folder with those from Arduino SAMD core
+- In "variants/trinket_m0/variant.h" add "#define Serial                      SerialUSB" at the end
+
+boards.txt
+ - Added compiler options
+ - Edited Trinket m0
+ - Added Project sero
+ - removed all other boards
+
+platform.txt
+ - Changed name
+ - Added wifi duck compiler options
+
+##########platform.txt+###################
+
+# this can be overriden in boards.txt
+build.extra_flags=
+build.cache_flags=
+build.flags.optimize=
+build.flags.maxspi=
+build.flags.maxqspi=
+build.flags.usbstack=
+build.flags.debug=
+
+build.protocol_flags=
+build.debug_flags=
+build.led_flags=
+build.led_pin=
+build.bridge_flags=
+build.bridge_button=
+build.bridge_rst=
+build.bridge_0=
+
+build.duck_flags={build.protocol_flags} {build.debug_flags} {build.led_flags} {build.led_pin} {build.bridge_flags} {build.bridge_button} {build.bridge_rst} {build.bridge_0}
+
+- Added "{build.duck_flags}" to "## Compile c files","## Compile c++ files" and "## Compile S files"

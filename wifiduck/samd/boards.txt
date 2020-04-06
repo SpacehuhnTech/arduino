@@ -14,32 +14,291 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+#menu.cache=Cache
+#menu.speed=CPU Speed
+#menu.opt=Optimize
+#menu.maxqspi=Max QSPI
+#menu.usbstack=USB Stack
+#menu.debug=Debug
+
+menu.keyboardid=USB Device ID
+menu.protocol=Protocol
+menu.debug=Debug
+menu.ledpin=Neopixel (WS2812b)
+menu.dipin=Dotstar (APA102) DI
+menu.cipin=Dotstar (APA102) CI
+menu.bridge=Serial Bridge
+menu.bridgebutton=Serial Bridge Enable Pin
+menu.bridgerst=Serial Bridge Reset Pin
+menu.bridge0=Serial Bridge GPIO-0 Pin
+
 # Adafruit Trinket M0 (SAMD21)
 # ------------------------------
-trinket.name=SAMD21E18
-trinket.vid.0=0x239A
-trinket.pid.0=0x801E
-trinket.vid.1=0x239A
-trinket.pid.1=0x001E
-trinket.upload.tool=bossac
-trinket.upload.protocol=sam-ba
-trinket.upload.maximum_size=262144
-trinket.upload.offset=0x2000
-trinket.upload.use_1200bps_touch=true
-trinket.upload.wait_for_upload_port=true
-trinket.upload.native_usb=true
-trinket.build.mcu=cortex-m0plus
-trinket.build.f_cpu=48000000L
-trinket.build.usb_product="Trinket M0"
-trinket.build.usb_manufacturer="Adafruit"
-trinket.build.board=TRINKET_M0
-trinket.build.core=arduino
-trinket.build.extra_flags=-DCRYSTALLESS -Dtrinket -D__SAMD21E18A__ -DARM_MATH_CM0PLUS {build.usb_flags}
-trinket.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-trinket.build.openocdscript=openocd_scripts/trinket_m0.cfg
-trinket.build.variant=trinket_m0
-trinket.build.variant_system_lib=
-trinket.build.vid=0x239A
-trinket.build.pid=0x801E
-trinket.bootloader.tool=openocd
-trinket.bootloader.file=trinketM0/bootloader-trinket_m0-v2.0.0-adafruit.5.bin
+adafruit_trinket_m0.name=Adafruit Trinket M0
+#adafruit_trinket_m0.vid.0=0x239A
+#adafruit_trinket_m0.pid.0=0x801E
+#adafruit_trinket_m0.vid.1=0x239A
+#adafruit_trinket_m0.pid.1=0x001E
+adafruit_trinket_m0.upload.tool=bossac
+adafruit_trinket_m0.upload.protocol=sam-ba
+adafruit_trinket_m0.upload.maximum_size=262144
+adafruit_trinket_m0.upload.offset=0x2000
+adafruit_trinket_m0.upload.use_1200bps_touch=true
+adafruit_trinket_m0.upload.wait_for_upload_port=true
+adafruit_trinket_m0.upload.native_usb=true
+adafruit_trinket_m0.build.mcu=cortex-m0plus
+adafruit_trinket_m0.build.f_cpu=48000000L
+adafruit_trinket_m0.build.board=TRINKET_M0
+adafruit_trinket_m0.build.core=arduino
+adafruit_trinket_m0.build.extra_flags=-DCRYSTALLESS -DADAFRUIT_TRINKET_M0 -D__SAMD21E18A__ -DARM_MATH_CM0PLUS {build.usb_flags}
+adafruit_trinket_m0.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+adafruit_trinket_m0.build.openocdscript=openocd_scripts/trinket_m0.cfg
+adafruit_trinket_m0.build.variant=trinket_m0
+adafruit_trinket_m0.build.variant_system_lib=
+#adafruit_trinket_m0.build.vid=0x239A
+#adafruit_trinket_m0.build.pid=0x801E
+adafruit_trinket_m0.bootloader.tool=openocd
+adafruit_trinket_m0.bootloader.file=trinketm0/bootloader-trinket_m0-v2.0.0-adafruit.5.bin
+adafruit_trinket_m0.menu.usbstack.arduino=Arduino
+#adafruit_trinket_m0.menu.usbstack.tinyusb=TinyUSB
+#adafruit_trinket_m0.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+#adafruit_trinket_m0.menu.debug.off=Off
+#adafruit_trinket_m0.menu.debug.on=On
+#adafruit_trinket_m0.menu.debug.on.build.flags.debug=-g
+
+# Keyboard ID
+adafruit_trinket_m0.menu.keyboardid.default=Adafruit Trinket M0
+adafruit_trinket_m0.menu.keyboardid.default.build.vid=0x239A
+adafruit_trinket_m0.menu.keyboardid.default.build.pid=0x801E
+adafruit_trinket_m0.menu.keyboardid.default.build.usb_product="Trinket M0"
+adafruit_trinket_m0.menu.keyboardid.default.build.usb_manufacturer="Adafruit"
+
+adafruit_trinket_m0.menu.keyboardid.apple=Apple Aluminium Keyboard
+adafruit_trinket_m0.menu.keyboardid.apple.build.vid=0x05ac
+adafruit_trinket_m0.menu.keyboardid.apple.build.pid=0x0221
+adafruit_trinket_m0.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+adafruit_trinket_m0.menu.keyboardid.apple.build.usb_manufacturer="Apple"
+
+adafruit_trinket_m0.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+adafruit_trinket_m0.menu.keyboardid.appleint.build.vid=0x05ac
+adafruit_trinket_m0.menu.keyboardid.appleint.build.pid=0x0259
+adafruit_trinket_m0.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+adafruit_trinket_m0.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
+
+adafruit_trinket_m0.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
+adafruit_trinket_m0.menu.keyboardid.logitechhid.build.vid=0x046d
+adafruit_trinket_m0.menu.keyboardid.logitechhid.build.pid=0xc316
+adafruit_trinket_m0.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+adafruit_trinket_m0.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
+
+adafruit_trinket_m0.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+adafruit_trinket_m0.menu.keyboardid.logitechgaming.build.vid=0x046d
+adafruit_trinket_m0.menu.keyboardid.logitechgaming.build.pid=0xc335
+adafruit_trinket_m0.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+adafruit_trinket_m0.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
+
+adafruit_trinket_m0.menu.keyboardid.ms=Microsoft Keyboard
+adafruit_trinket_m0.menu.keyboardid.ms.build.vid=0x045e
+adafruit_trinket_m0.menu.keyboardid.ms.build.pid=0xfff8
+adafruit_trinket_m0.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+adafruit_trinket_m0.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
+
+# Protocol
+adafruit_trinket_m0.menu.protocol.auto=Auto (I2C & Serial)
+adafruit_trinket_m0.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+adafruit_trinket_m0.menu.protocol.i2c=I2C
+adafruit_trinket_m0.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+adafruit_trinket_m0.menu.protocol.serial=Serial
+adafruit_trinket_m0.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+########## Debug ##########
+adafruit_trinket_m0.menu.debug.serial=Serial (115200b, newline)
+adafruit_trinket_m0.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+adafruit_trinket_m0.menu.debug.disabled=Disabled
+
+########## LED ##########
+
+adafruit_trinket_m0.menu.dipin.7=7 (DI)
+adafruit_trinket_m0.menu.dipin.7.build.neopixel_pin=-DNEOPIXEL -DLED_PIN=7
+adafruit_trinket_m0.menu.dipin.disabled=Disabled
+
+adafruit_trinket_m0.menu.cipin.8=8 (CI)
+adafruit_trinket_m0.menu.cipin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
+adafruit_trinket_m0.menu.cipin.disabled=Disabled
+
+#adafruit_trinket_m0.menu.ledpin.disabled=Disabled
+#adafruit_trinket_m0.menu.ledpin.0=0 (A2)
+#adafruit_trinket_m0.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
+#adafruit_trinket_m0.menu.ledpin.1=1~ (A0)
+#adafruit_trinket_m0.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
+#adafruit_trinket_m0.menu.ledpin.2=2 (A1)
+#adafruit_trinket_m0.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
+#adafruit_trinket_m0.menu.ledpin.3=3 (A3) (RX)
+#adafruit_trinket_m0.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
+#adafruit_trinket_m0.menu.ledpin.4=4 (A4) (TX)
+#adafruit_trinket_m0.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DLED_PIN=4
+#adafruit_trinket_m0.menu.ledpin.7=7 (DI)
+#adafruit_trinket_m0.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DLED_PIN=7
+#adafruit_trinket_m0.menu.ledpin.8=8 (CI)
+#adafruit_trinket_m0.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
+#adafruit_trinket_m0.menu.ledpin.19=19 (SWCLK)
+#adafruit_trinket_m0.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
+#adafruit_trinket_m0.menu.ledpin.20=20 (SWDIO)
+#adafruit_trinket_m0.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
+
+########## Serial Bridge ##########
+adafruit_trinket_m0.menu.bridge.disabled=Disabled
+
+adafruit_trinket_m0.menu.bridge.serial1=Serial1
+adafruit_trinket_m0.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+adafruit_trinket_m0.menu.bridgebutton.disabled=Disabled
+adafruit_trinket_m0.menu.bridgebutton.0=0 (A2)
+adafruit_trinket_m0.menu.bridgebutton.0.build.bridge_button=-DBRIDGE_SWITCH=0
+adafruit_trinket_m0.menu.bridgebutton.1=1~ (A0)
+adafruit_trinket_m0.menu.bridgebutton.1.build.bridge_button=-DBRIDGE_SWITCH=1
+adafruit_trinket_m0.menu.bridgebutton.2=2 (A1)
+adafruit_trinket_m0.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+adafruit_trinket_m0.menu.bridgebutton.3=3 (A3) (RX)
+adafruit_trinket_m0.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+adafruit_trinket_m0.menu.bridgebutton.4=4 (A4) (TX)
+adafruit_trinket_m0.menu.bridgebutton.4.build.bridge_button=-DBRIDGE_SWITCH=4
+adafruit_trinket_m0.menu.bridgebutton.7=7 (DI)
+adafruit_trinket_m0.menu.bridgebutton.7.build.bridge_button=-DBRIDGE_SWITCH=7
+adafruit_trinket_m0.menu.bridgebutton.8=8 (CI)
+adafruit_trinket_m0.menu.bridgebutton.8.build.bridge_button=-DBRIDGE_SWITCH=8
+adafruit_trinket_m0.menu.bridgebutton.19=19 (SWCLK)
+adafruit_trinket_m0.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+adafruit_trinket_m0.menu.bridgebutton.20=20 (SWDIO)
+adafruit_trinket_m0.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+
+adafruit_trinket_m0.menu.bridgerst.disabled=Disabled
+adafruit_trinket_m0.menu.bridgerst.0=0 (A2)
+adafruit_trinket_m0.menu.bridgerst.0.build.bridge_rst=-DBRIDGE_RST=0
+adafruit_trinket_m0.menu.bridgerst.1=1~ (A0)
+adafruit_trinket_m0.menu.bridgerst.1.build.bridge_rst=-DBRIDGE_RST=1
+adafruit_trinket_m0.menu.bridgerst.2=2 (A1)
+adafruit_trinket_m0.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+adafruit_trinket_m0.menu.bridgerst.3=3 (A3) (RX)
+adafruit_trinket_m0.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+adafruit_trinket_m0.menu.bridgerst.4=4 (A4) (TX)
+adafruit_trinket_m0.menu.bridgerst.4.build.bridge_rst=-DBRIDGE_RST=4
+adafruit_trinket_m0.menu.bridgerst.7=7 (DI)
+adafruit_trinket_m0.menu.bridgerst.7.build.bridge_rst=-DBRIDGE_RST=7
+adafruit_trinket_m0.menu.bridgerst.8=8 (CI)
+adafruit_trinket_m0.menu.bridgerst.8.build.bridge_rst=-DBRIDGE_RST=8
+adafruit_trinket_m0.menu.bridgerst.19=19 (SWCLK)
+adafruit_trinket_m0.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+adafruit_trinket_m0.menu.bridgerst.20=20 (SWDIO)
+adafruit_trinket_m0.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+
+adafruit_trinket_m0.menu.bridge0.disabled=Disabled
+adafruit_trinket_m0.menu.bridge0.0=0 (A2)
+adafruit_trinket_m0.menu.bridge0.0.build.bridge_0=-DBRIDGE_0=0
+adafruit_trinket_m0.menu.bridge0.1=1~ (A0)
+adafruit_trinket_m0.menu.bridge0.1.build.bridge_0=-DBRIDGE_0=1
+adafruit_trinket_m0.menu.bridge0.2=2 (A1)
+adafruit_trinket_m0.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+adafruit_trinket_m0.menu.bridge0.3=3 (A3) (RX)
+adafruit_trinket_m0.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+adafruit_trinket_m0.menu.bridge0.4=4 (A4) (TX)
+adafruit_trinket_m0.menu.bridge0.4.build.bridge_0=-DBRIDGE_0=4
+adafruit_trinket_m0.menu.bridge0.7=7 (DI)
+adafruit_trinket_m0.menu.bridge0.7.build.bridge_0=-DBRIDGE_0=7
+adafruit_trinket_m0.menu.bridge0.8=8 (CI)
+adafruit_trinket_m0.menu.bridge0.8.build.bridge_0=-DBRIDGE_0=8
+adafruit_trinket_m0.menu.bridge0.19=19 (SWCLK)
+adafruit_trinket_m0.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+adafruit_trinket_m0.menu.bridge0.20=20 (SWDIO)
+adafruit_trinket_m0.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+
+
+# Project Sero
+# ------------------------------
+project_sero.name=Project Sero
+#project_sero.vid.0=0x239A
+#project_sero.pid.0=0x801E
+#project_sero.vid.1=0x239A
+#project_sero.pid.1=0x001E
+project_sero.upload.tool=bossac
+project_sero.upload.protocol=sam-ba
+project_sero.upload.maximum_size=262144
+project_sero.upload.offset=0x2000
+project_sero.upload.use_1200bps_touch=true
+project_sero.upload.wait_for_upload_port=true
+project_sero.upload.native_usb=true
+project_sero.build.mcu=cortex-m0plus
+project_sero.build.f_cpu=48000000L
+project_sero.build.board=TRINKET_M0
+project_sero.build.core=arduino
+project_sero.build.extra_flags=-DCRYSTALLESS -DPROJECT_SERO -D__SAMD21E18A__ -DARM_MATH_CM0PLUS {build.usb_flags}
+project_sero.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+project_sero.build.openocdscript=openocd_scripts/trinket_m0.cfg
+project_sero.build.variant=trinket_m0
+project_sero.build.variant_system_lib=
+project_sero.bootloader.tool=openocd
+project_sero.bootloader.file=trinketm0/bootloader-trinket_m0-v2.0.0-adafruit.5.bin
+project_sero.menu.usbstack.arduino=Arduino
+#project_sero.menu.usbstack.tinyusb=TinyUSB
+#project_sero.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+#project_sero.menu.debug.off=Off
+#project_sero.menu.debug.on=On
+#project_sero.menu.debug.on.build.flags.debug=-g
+
+########## Keyboard ID ##########
+project_sero.menu.keyboardid.default=Adafruit Trinket M0
+project_sero.menu.keyboardid.default.build.vid=0x239A
+project_sero.menu.keyboardid.default.build.pid=0x801E
+project_sero.menu.keyboardid.default.build.usb_product="Trinket M0"
+project_sero.menu.keyboardid.default.build.usb_manufacturer="Adafruit"
+
+project_sero.menu.keyboardid.apple=Apple Aluminium Keyboard
+project_sero.menu.keyboardid.apple.build.vid=0x05ac
+project_sero.menu.keyboardid.apple.build.pid=0x0221
+project_sero.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+project_sero.menu.keyboardid.apple.build.usb_manufacturer="Apple"
+
+project_sero.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+project_sero.menu.keyboardid.appleint.build.vid=0x05ac
+project_sero.menu.keyboardid.appleint.build.pid=0x0259
+project_sero.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+project_sero.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
+
+project_sero.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
+project_sero.menu.keyboardid.logitechhid.build.vid=0x046d
+project_sero.menu.keyboardid.logitechhid.build.pid=0xc316
+project_sero.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+project_sero.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
+
+project_sero.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+project_sero.menu.keyboardid.logitechgaming.build.vid=0x046d
+project_sero.menu.keyboardid.logitechgaming.build.pid=0xc335
+project_sero.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+project_sero.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
+
+project_sero.menu.keyboardid.ms=Microsoft Keyboard
+project_sero.menu.keyboardid.ms.build.vid=0x045e
+project_sero.menu.keyboardid.ms.build.pid=0xfff8
+project_sero.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+project_sero.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
+
+########## Protocol ##########
+project_sero.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+########## Debug ##########
+project_sero.menu.debug.disabled=Disabled
+
+project_sero.menu.debug.serial=USB Serial (115200b, newline)
+project_sero.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+########## LED ##########
+project_sero.build.led_flags=-DDOTSTAR -DDOTSTAR_NUM=1 -DDOTSTAR_DI=7 -DDOTSTAR_CI=8
+
+########## Serial Bridge ##########
+project_sero.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+project_sero.build.bridge_button=-DBRIDGE_SWITCH=1
+project_sero.build.bridge_rst=-DBRIDGE_RST=2
+project_sero.build.bridge_0=-DBRIDGE_0=0
