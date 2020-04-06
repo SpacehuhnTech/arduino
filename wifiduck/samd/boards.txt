@@ -66,7 +66,7 @@ adafruit_trinket_m0.menu.usbstack.arduino=Arduino
 #adafruit_trinket_m0.menu.debug.on=On
 #adafruit_trinket_m0.menu.debug.on.build.flags.debug=-g
 
-# Keyboard ID
+########## Keyboard ID ##########
 adafruit_trinket_m0.menu.keyboardid.default=Adafruit Trinket M0
 adafruit_trinket_m0.menu.keyboardid.default.build.vid=0x239A
 adafruit_trinket_m0.menu.keyboardid.default.build.pid=0x801E
@@ -103,7 +103,7 @@ adafruit_trinket_m0.menu.keyboardid.ms.build.pid=0xfff8
 adafruit_trinket_m0.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 adafruit_trinket_m0.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
-# Protocol
+########## Protocol ##########
 adafruit_trinket_m0.menu.protocol.auto=Auto (I2C & Serial)
 adafruit_trinket_m0.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 

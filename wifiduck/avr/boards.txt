@@ -32,7 +32,6 @@ dstike.build.board=AVR_ATMEGA32U4
 dstike.build.core=arduino
 dstike.build.variant=dstike
 dstike.build.mcu=atmega32u4
-dstike.build.usb_product="USB Keyboard"
 
 dstike.build.f_cpu=16000000L
 dstike.bootloader.extended_fuses=0xCB
@@ -46,26 +45,38 @@ dstike.build.led_pin=-DLED_PIN=7
 dstike.menu.keyboardid.default=Arduino Leonardo
 dstike.menu.keyboardid.default.build.vid=0x2341
 dstike.menu.keyboardid.default.build.pid=0x8036
+dstike.menu.keyboardid.default.build.usb_product="Leonardo"
+dstike.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 dstike.menu.keyboardid.apple=Apple Aluminium Keyboard
 dstike.menu.keyboardid.apple.build.vid=0x05ac
 dstike.menu.keyboardid.apple.build.pid=0x0221
+dstike.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+dstike.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 dstike.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 dstike.menu.keyboardid.appleint.build.vid=0x05ac
 dstike.menu.keyboardid.appleint.build.pid=0x0259
+dstike.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+dstike.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 dstike.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 dstike.menu.keyboardid.logitechhid.build.vid=0x046d
 dstike.menu.keyboardid.logitechhid.build.pid=0xc316
+dstike.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+dstike.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 dstike.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 dstike.menu.keyboardid.logitechgaming.build.vid=0x046d
 dstike.menu.keyboardid.logitechgaming.build.pid=0xc335
+dstike.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+dstike.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 dstike.menu.keyboardid.ms=Microsoft Keyboard
 dstike.menu.keyboardid.ms.build.vid=0x045e
 dstike.menu.keyboardid.ms.build.pid=0xfff8
+dstike.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+dstike.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Debug ##########
 dstike.menu.debug.serial=Serial (115200b, newline)
@@ -99,7 +110,6 @@ atmega32u4.build.board=AVR_ATMEGA32U4
 atmega32u4.build.core=arduino
 atmega32u4.build.variant=atmega32u4
 atmega32u4.build.mcu=atmega32u4
-atmega32u4.build.usb_product="USB Keyboard"
 
 ########## 5V / 16MHz ##########
 atmega32u4.menu.cpu.16MHzatmega32U4=5V, 16 MHz
@@ -119,26 +129,38 @@ atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.file=Caterina-promicro8.hex
 atmega32u4.menu.keyboardid.default=Arduino Leonardo
 atmega32u4.menu.keyboardid.default.build.vid=0x2341
 atmega32u4.menu.keyboardid.default.build.pid=0x8036
+atmega32u4.menu.keyboardid.default.build.usb_product="Leonardo"
+atmega32u4.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 atmega32u4.menu.keyboardid.apple=Apple Aluminium Keyboard
 atmega32u4.menu.keyboardid.apple.build.vid=0x05ac
 atmega32u4.menu.keyboardid.apple.build.pid=0x0221
+atmega32u4.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+atmega32u4.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 atmega32u4.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 atmega32u4.menu.keyboardid.appleint.build.vid=0x05ac
 atmega32u4.menu.keyboardid.appleint.build.pid=0x0259
+atmega32u4.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+atmega32u4.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 atmega32u4.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 atmega32u4.menu.keyboardid.logitechhid.build.vid=0x046d
 atmega32u4.menu.keyboardid.logitechhid.build.pid=0xc316
+atmega32u4.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+atmega32u4.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 atmega32u4.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 atmega32u4.menu.keyboardid.logitechgaming.build.vid=0x046d
 atmega32u4.menu.keyboardid.logitechgaming.build.pid=0xc335
+atmega32u4.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+atmega32u4.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 atmega32u4.menu.keyboardid.ms=Microsoft Keyboard
 atmega32u4.menu.keyboardid.ms.build.vid=0x045e
 atmega32u4.menu.keyboardid.ms.build.pid=0xfff8
+atmega32u4.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+atmega32u4.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 atmega32u4.menu.protocol.auto=Auto (I2C & Serial)
@@ -376,7 +398,6 @@ leonardo.build.board=AVR_ATMEGA32U4
 leonardo.build.core=arduino
 leonardo.build.variant=leonardo
 leonardo.build.mcu=atmega32u4
-leonardo.build.usb_product="USB Keyboard"
 
 leonardo.build.f_cpu=16000000L
 leonardo.bootloader.extended_fuses=0xCB
@@ -386,26 +407,38 @@ leonardo.bootloader.file=Caterina-Leonardo.hex
 leonardo.menu.keyboardid.default=Arduino Leonardo
 leonardo.menu.keyboardid.default.build.vid=0x2341
 leonardo.menu.keyboardid.default.build.pid=0x8036
+leonardo.menu.keyboardid.default.build.usb_product="Leonardo"
+leonardo.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 leonardo.menu.keyboardid.apple=Apple Aluminium Keyboard
 leonardo.menu.keyboardid.apple.build.vid=0x05ac
 leonardo.menu.keyboardid.apple.build.pid=0x0221
+leonardo.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+leonardo.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 leonardo.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 leonardo.menu.keyboardid.appleint.build.vid=0x05ac
 leonardo.menu.keyboardid.appleint.build.pid=0x0259
+leonardo.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+leonardo.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 leonardo.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 leonardo.menu.keyboardid.logitechhid.build.vid=0x046d
 leonardo.menu.keyboardid.logitechhid.build.pid=0xc316
+leonardo.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+leonardo.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 leonardo.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 leonardo.menu.keyboardid.logitechgaming.build.vid=0x046d
 leonardo.menu.keyboardid.logitechgaming.build.pid=0xc335
+leonardo.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+leonardo.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 leonardo.menu.keyboardid.ms=Microsoft Keyboard
 leonardo.menu.keyboardid.ms.build.vid=0x045e
 leonardo.menu.keyboardid.ms.build.pid=0xfff8
+leonardo.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+leonardo.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 leonardo.menu.protocol.auto=Auto (I2C & Serial)
@@ -635,7 +668,6 @@ micro.build.board=AVR_ATMEGA32U4
 micro.build.core=arduino
 micro.build.variant=micro
 micro.build.mcu=atmega32u4
-micro.build.usb_product="USB Keyboard"
 
 micro.build.f_cpu=16000000L
 micro.bootloader.extended_fuses=0xCB
@@ -645,26 +677,38 @@ micro.bootloader.file=Caterina-Micro.hex
 micro.menu.keyboardid.default=Arduino Leonardo
 micro.menu.keyboardid.default.build.vid=0x2341
 micro.menu.keyboardid.default.build.pid=0x8036
+micro.menu.keyboardid.default.build.usb_product="Leonardo"
+micro.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 micro.menu.keyboardid.apple=Apple Aluminium Keyboard
 micro.menu.keyboardid.apple.build.vid=0x05ac
 micro.menu.keyboardid.apple.build.pid=0x0221
+micro.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+micro.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 micro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 micro.menu.keyboardid.appleint.build.vid=0x05ac
 micro.menu.keyboardid.appleint.build.pid=0x0259
+micro.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+micro.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 micro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 micro.menu.keyboardid.logitechhid.build.vid=0x046d
 micro.menu.keyboardid.logitechhid.build.pid=0xc316
+micro.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+micro.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 micro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 micro.menu.keyboardid.logitechgaming.build.vid=0x046d
 micro.menu.keyboardid.logitechgaming.build.pid=0xc335
+micro.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+micro.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 micro.menu.keyboardid.ms=Microsoft Keyboard
 micro.menu.keyboardid.ms.build.vid=0x045e
 micro.menu.keyboardid.ms.build.pid=0xfff8
+micro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+micro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 micro.menu.protocol.auto=Auto (I2C & Serial)
@@ -902,7 +946,6 @@ promicro.build.board=AVR_ATMEGA32U4
 promicro.build.core=arduino
 promicro.build.variant=promicro
 promicro.build.mcu=atmega32u4
-promicro.build.usb_product="USB Keyboard"
 
 ########## 5V / 16MHz ##########
 promicro.menu.cpu.16MHzatmega32U4=5V, 16 MHz
@@ -922,26 +965,38 @@ promicro.menu.cpu.8MHzatmega32U4.bootloader.file=Caterina-promicro8.hex
 promicro.menu.keyboardid.default=Arduino Leonardo
 promicro.menu.keyboardid.default.build.vid=0x2341
 promicro.menu.keyboardid.default.build.pid=0x8036
+promicro.menu.keyboardid.default.build.usb_product="Leonardo"
+promicro.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 promicro.menu.keyboardid.apple=Apple Aluminium Keyboard
 promicro.menu.keyboardid.apple.build.vid=0x05ac
 promicro.menu.keyboardid.apple.build.pid=0x0221
+promicro.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+promicro.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 promicro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 promicro.menu.keyboardid.appleint.build.vid=0x05ac
 promicro.menu.keyboardid.appleint.build.pid=0x0259
+promicro.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+promicro.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 promicro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 promicro.menu.keyboardid.logitechhid.build.vid=0x046d
 promicro.menu.keyboardid.logitechhid.build.pid=0xc316
+promicro.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+promicro.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 promicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 promicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 promicro.menu.keyboardid.logitechgaming.build.pid=0xc335
+promicro.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+promicro.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 promicro.menu.keyboardid.ms=Microsoft Keyboard
 promicro.menu.keyboardid.ms.build.vid=0x045e
 promicro.menu.keyboardid.ms.build.pid=0xfff8
+promicro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+promicro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 promicro.menu.protocol.auto=Auto (I2C & Serial)
@@ -1132,7 +1187,6 @@ cjmcu.build.board=AVR_ATMEGA32U4
 cjmcu.build.core=arduino
 cjmcu.build.variant=atmega32u4
 cjmcu.build.mcu=atmega32u4
-cjmcu.build.usb_product="USB Keyboard"
 
 ########## 5V / 16MHz ##########
 cjmcu.build.f_cpu=16000000L
@@ -1143,26 +1197,38 @@ cjmcu.bootloader.file=Caterina-promicro16.hex
 cjmcu.menu.keyboardid.default=Arduino Leonardo
 cjmcu.menu.keyboardid.default.build.vid=0x2341
 cjmcu.menu.keyboardid.default.build.pid=0x8036
+cjmcu.menu.keyboardid.default.build.usb_product="Leonardo"
+cjmcu.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 cjmcu.menu.keyboardid.apple=Apple Aluminium Keyboard
 cjmcu.menu.keyboardid.apple.build.vid=0x05ac
 cjmcu.menu.keyboardid.apple.build.pid=0x0221
+cjmcu.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+cjmcu.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 cjmcu.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 cjmcu.menu.keyboardid.appleint.build.vid=0x05ac
 cjmcu.menu.keyboardid.appleint.build.pid=0x0259
+cjmcu.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+cjmcu.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 cjmcu.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 cjmcu.menu.keyboardid.logitechhid.build.vid=0x046d
 cjmcu.menu.keyboardid.logitechhid.build.pid=0xc316
+cjmcu.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+cjmcu.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 cjmcu.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 cjmcu.menu.keyboardid.logitechgaming.build.vid=0x046d
 cjmcu.menu.keyboardid.logitechgaming.build.pid=0xc335
+cjmcu.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+cjmcu.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 cjmcu.menu.keyboardid.ms=Microsoft Keyboard
 cjmcu.menu.keyboardid.ms.build.vid=0x045e
 cjmcu.menu.keyboardid.ms.build.pid=0xfff8
+cjmcu.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+cjmcu.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 cjmcu.menu.protocol.auto=Auto (I2C & Serial)
@@ -1312,7 +1378,6 @@ ssmicro.build.board=AVR_ATMEGA32U4
 ssmicro.build.core=arduino
 ssmicro.build.variant=atmega32u4
 ssmicro.build.mcu=atmega32u4
-ssmicro.build.usb_product="USB Keyboard"
 
 ########## 3.3V / 8MHz ##########
 ssmicro.build.f_cpu=8000000L
@@ -1323,26 +1388,38 @@ ssmicro.bootloader.file=Caterina-promicro8.hex
 ssmicro.menu.keyboardid.default=Arduino Leonardo
 ssmicro.menu.keyboardid.default.build.vid=0x2341
 ssmicro.menu.keyboardid.default.build.pid=0x8036
+ssmicro.menu.keyboardid.default.build.usb_product="Leonardo"
+ssmicro.menu.keyboardid.default.build.usb_manufacturer="Arduino"
 
 ssmicro.menu.keyboardid.apple=Apple Aluminium Keyboard
 ssmicro.menu.keyboardid.apple.build.vid=0x05ac
 ssmicro.menu.keyboardid.apple.build.pid=0x0221
+ssmicro.menu.keyboardid.apple.build.usb_product="Aluminium Keyboard"
+ssmicro.menu.keyboardid.apple.build.usb_manufacturer="Apple"
 
 ssmicro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
 ssmicro.menu.keyboardid.appleint.build.vid=0x05ac
 ssmicro.menu.keyboardid.appleint.build.pid=0x0259
+ssmicro.menu.keyboardid.appleint.build.usb_product="Internal Keyboard/Trackpad"
+ssmicro.menu.keyboardid.appleint.build.usb_manufacturer="Apple"
 
 ssmicro.menu.keyboardid.logitechhid=Logitech HID-Compliant Keyboard
 ssmicro.menu.keyboardid.logitechhid.build.vid=0x046d
 ssmicro.menu.keyboardid.logitechhid.build.pid=0xc316
+ssmicro.menu.keyboardid.logitechhid.build.usb_product="USB Keyboard"
+ssmicro.menu.keyboardid.logitechhid.build.usb_manufacturer="Logitech"
 
 ssmicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
 ssmicro.menu.keyboardid.logitechgaming.build.vid=0x046d
 ssmicro.menu.keyboardid.logitechgaming.build.pid=0xc335
+ssmicro.menu.keyboardid.logitechgaming.build.usb_product="G910 Keyboard"
+ssmicro.menu.keyboardid.logitechgaming.build.usb_manufacturer="Logitech"
 
 ssmicro.menu.keyboardid.ms=Microsoft Keyboard
 ssmicro.menu.keyboardid.ms.build.vid=0x045e
 ssmicro.menu.keyboardid.ms.build.pid=0xfff8
+ssmicro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
+ssmicro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 ########## Protocol ##########
 ssmicro.menu.protocol.auto=Auto (I2C & Serial)
