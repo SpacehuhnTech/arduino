@@ -298,7 +298,7 @@ project_sero.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Ser
 project_sero.build.led_flags=-DDOTSTAR -DDOTSTAR_NUM=1 -DDOTSTAR_DI=7 -DDOTSTAR_CI=8
 
 ########## Serial Bridge ##########
-project_sero.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+project_sero.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1 -DBRIDGE_0_INVERTED
 project_sero.build.bridge_button=-DBRIDGE_SWITCH=1
 project_sero.build.bridge_rst=-DBRIDGE_RST=2
 project_sero.build.bridge_0=-DBRIDGE_0=0
