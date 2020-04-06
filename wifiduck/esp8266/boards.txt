@@ -69,6 +69,7 @@ dstike.menu.eesz.4M3M.build.rfcal_addr=0x3FC000
 dstike.menu.eesz.4M3M.build.spiffs_start=0x100000
 dstike.menu.eesz.4M3M.build.spiffs_end=0x3FA000
 dstike.menu.eesz.4M3M.build.spiffs_blocksize=8192
+
 dstike.menu.eesz.4M2M=4MB (FS:2MB OTA:~1019KB)
 dstike.menu.eesz.4M2M.build.flash_size=4M
 dstike.menu.eesz.4M2M.build.flash_size_bytes=0x400000
@@ -79,28 +80,34 @@ dstike.menu.eesz.4M2M.build.rfcal_addr=0x3FC000
 dstike.menu.eesz.4M2M.build.spiffs_start=0x200000
 dstike.menu.eesz.4M2M.build.spiffs_end=0x3FA000
 dstike.menu.eesz.4M2M.build.spiffs_blocksize=8192
-dstike.menu.eesz.4M1M=4MB (FS:1MB OTA:~1019KB)
-dstike.menu.eesz.4M1M.build.flash_size=4M
-dstike.menu.eesz.4M1M.build.flash_size_bytes=0x400000
-dstike.menu.eesz.4M1M.build.flash_ld=eagle.flash.4m1m.ld
-dstike.menu.eesz.4M1M.build.spiffs_pagesize=256
-dstike.menu.eesz.4M1M.upload.maximum_size=1044464
-dstike.menu.eesz.4M1M.build.rfcal_addr=0x3FC000
-dstike.menu.eesz.4M1M.build.spiffs_start=0x300000
-dstike.menu.eesz.4M1M.build.spiffs_end=0x3FA000
-dstike.menu.eesz.4M1M.build.spiffs_blocksize=8192
+
+dstike.menu.eesz.2M1M=2MB (FS:1MB OTA:~512KB)
+dstike.menu.eesz.2M1M.build.flash_size=2M
+dstike.menu.eesz.2M1M.build.flash_size_bytes=0x200000
+dstike.menu.eesz.2M1M.build.flash_ld=eagle.flash.2m1m.ld
+dstike.menu.eesz.2M1M.build.spiffs_pagesize=256
+dstike.menu.eesz.2M1M.upload.maximum_size=1044464
+dstike.menu.eesz.2M1M.build.rfcal_addr=0x1FC000
+dstike.menu.eesz.2M1M.build.spiffs_start=0x100000
+dstike.menu.eesz.2M1M.build.spiffs_end=0x1FA000
+dstike.menu.eesz.2M1M.build.spiffs_blocksize=8192
+
+dstike.menu.eesz.2M512=2MB (FS:512KB OTA:~768KB)
+dstike.menu.eesz.2M512.build.flash_size=2M
+dstike.menu.eesz.2M512.build.flash_size_bytes=0x200000
+dstike.menu.eesz.2M512.build.flash_ld=eagle.flash.2m512.ld
+dstike.menu.eesz.2M512.build.spiffs_pagesize=256
+dstike.menu.eesz.2M512.upload.maximum_size=1044464
+dstike.menu.eesz.2M512.build.rfcal_addr=0x1FC000
+dstike.menu.eesz.2M512.build.spiffs_start=0x180000
+dstike.menu.eesz.2M512.build.spiffs_end=0x1FA000
+dstike.menu.eesz.2M512.build.spiffs_blocksize=8192
 
 dstike.build.lwip_include=lwip2/include
 dstike.build.lwip_lib=-llwip2-536-feat
 dstike.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
 dstike.build.debug_port=
 dstike.build.debug_level=
-
-dstike.menu.debug.disabled=Disabled
-dstike.menu.debug.serial=Serial (115200, newline)
-dstike.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
-
-dstike.build.protocol_flags=-DENABLE_I2C -DI2C_SDA=4 -DI2C_SCL=5
 
 dstike.menu.wipe.none=Only Sketch
 dstike.menu.wipe.none.upload.erase_cmd=
@@ -125,6 +132,109 @@ dstike.menu.baud.512000.windows=512000
 dstike.menu.baud.512000.upload.speed=512000
 dstike.menu.baud.921600=921600
 dstike.menu.baud.921600.upload.speed=921600
+
+##############################################################
+sero.name=Project Sero (ESP8266)
+sero.build.board=ESP8266_NODEMCU
+sero.build.variant=sero
+sero.upload.tool=esptool
+sero.upload.maximum_data_size=81920
+sero.upload.wait_for_upload_port=true
+sero.upload.erase_cmd=
+sero.serial.disableDTR=true
+sero.serial.disableRTS=true
+sero.build.mcu=esp8266
+sero.build.core=esp8266
+sero.build.spiffs_pagesize=256
+sero.build.debug_port=
+sero.build.debug_level=
+
+sero.build.protocol_flags=-DENABLE_SERIAL
+
+sero.build.f_cpu=160000000L
+
+sero.build.vtable_flags=-DVTABLES_IN_FLASH
+
+sero.build.exception_flags=-fno-exceptions
+sero.build.sslflags=
+sero.upload.resetmethod=--before default_reset --after hard_reset
+sero.build.flash_freq=40
+sero.build.flash_mode=dio
+sero.build.flash_flags=-DFLASHMODE_DIO
+
+sero.menu.eesz.4M3M=4MB (FS:3MB OTA:~512KB)
+sero.menu.eesz.4M3M.build.flash_size=4M
+sero.menu.eesz.4M3M.build.flash_size_bytes=0x400000
+sero.menu.eesz.4M3M.build.flash_ld=eagle.flash.4m3m.ld
+sero.menu.eesz.4M3M.build.spiffs_pagesize=256
+sero.menu.eesz.4M3M.upload.maximum_size=1044464
+sero.menu.eesz.4M3M.build.rfcal_addr=0x3FC000
+sero.menu.eesz.4M3M.build.spiffs_start=0x100000
+sero.menu.eesz.4M3M.build.spiffs_end=0x3FA000
+sero.menu.eesz.4M3M.build.spiffs_blocksize=8192
+
+sero.menu.eesz.4M2M=4MB (FS:2MB OTA:~1019KB)
+sero.menu.eesz.4M2M.build.flash_size=4M
+sero.menu.eesz.4M2M.build.flash_size_bytes=0x400000
+sero.menu.eesz.4M2M.build.flash_ld=eagle.flash.4m2m.ld
+sero.menu.eesz.4M2M.build.spiffs_pagesize=256
+sero.menu.eesz.4M2M.upload.maximum_size=1044464
+sero.menu.eesz.4M2M.build.rfcal_addr=0x3FC000
+sero.menu.eesz.4M2M.build.spiffs_start=0x200000
+sero.menu.eesz.4M2M.build.spiffs_end=0x3FA000
+sero.menu.eesz.4M2M.build.spiffs_blocksize=8192
+
+sero.menu.eesz.2M1M=2MB (FS:1MB OTA:~512KB)
+sero.menu.eesz.2M1M.build.flash_size=2M
+sero.menu.eesz.2M1M.build.flash_size_bytes=0x200000
+sero.menu.eesz.2M1M.build.flash_ld=eagle.flash.2m1m.ld
+sero.menu.eesz.2M1M.build.spiffs_pagesize=256
+sero.menu.eesz.2M1M.upload.maximum_size=1044464
+sero.menu.eesz.2M1M.build.rfcal_addr=0x1FC000
+sero.menu.eesz.2M1M.build.spiffs_start=0x100000
+sero.menu.eesz.2M1M.build.spiffs_end=0x1FA000
+sero.menu.eesz.2M1M.build.spiffs_blocksize=8192
+
+sero.menu.eesz.2M512=2MB (FS:512KB OTA:~768KB)
+sero.menu.eesz.2M512.build.flash_size=2M
+sero.menu.eesz.2M512.build.flash_size_bytes=0x200000
+sero.menu.eesz.2M512.build.flash_ld=eagle.flash.2m512.ld
+sero.menu.eesz.2M512.build.spiffs_pagesize=256
+sero.menu.eesz.2M512.upload.maximum_size=1044464
+sero.menu.eesz.2M512.build.rfcal_addr=0x1FC000
+sero.menu.eesz.2M512.build.spiffs_start=0x180000
+sero.menu.eesz.2M512.build.spiffs_end=0x1FA000
+sero.menu.eesz.2M512.build.spiffs_blocksize=8192
+
+sero.build.lwip_include=lwip2/include
+sero.build.lwip_lib=-llwip2-536-feat
+sero.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+sero.build.debug_port=
+sero.build.debug_level=
+
+sero.menu.wipe.none=Only Sketch
+sero.menu.wipe.none.upload.erase_cmd=
+sero.menu.wipe.sdk=Sketch + WiFi Settings
+sero.menu.wipe.sdk.upload.erase_cmd=erase_region "{build.rfcal_addr}" 0x4000
+sero.menu.wipe.all=All Flash Contents
+sero.menu.wipe.all.upload.erase_cmd=erase_flash
+
+sero.menu.baud.115200=115200
+sero.menu.baud.115200.upload.speed=115200
+sero.menu.baud.57600=57600
+sero.menu.baud.57600.upload.speed=57600
+sero.menu.baud.230400.linux=230400
+sero.menu.baud.230400.macosx=230400
+sero.menu.baud.230400.upload.speed=230400
+sero.menu.baud.256000.windows=256000
+sero.menu.baud.256000.upload.speed=256000
+sero.menu.baud.460800.linux=460800
+sero.menu.baud.460800.macosx=460800
+sero.menu.baud.460800.upload.speed=460800
+sero.menu.baud.512000.windows=512000
+sero.menu.baud.512000.upload.speed=512000
+sero.menu.baud.921600=921600
+sero.menu.baud.921600.upload.speed=921600
 
 ##############################################################
 generic.name=Generic ESP8266 Module

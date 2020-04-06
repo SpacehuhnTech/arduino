@@ -1,0 +1,23 @@
+boards.txt
+ - Added DSTIKE board
+ - Removed every other board except generic ESP866/85, NodeMCU and Lolin/Wemos d1 mini
+ - Added compiler options for debug and
+
+variants
+ - added dstike
+ - added sero
+
+tools/get.py
+ - changed path to '../../package_wifiduck_index.json'
+
+changes.txt
+
+platform.txt
+ - Changed name
+ - Added compiler options
+
+# This can be overriden in boards.txt
+build.debug_flags=
+build.protocol_flags=
+
+build.extra_flags=-DESP8266 {build.debug_flags} {build.protocol_flags}
