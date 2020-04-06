@@ -2,8 +2,7 @@ menu.cpu=Processor
 menu.keyboardid=USB Device ID
 menu.protocol=Protocol
 menu.debug=Debug
-menu.led=LED
-menu.ledpin=LED Pin
+menu.ledpin=Neopixel (WS2812b)
 menu.bridge=Serial Bridge
 menu.bridgebutton=Serial Bridge Enable Pin
 menu.bridgerst=Serial Bridge Reset Pin
@@ -40,7 +39,7 @@ dstike.bootloader.extended_fuses=0xCB
 dstike.bootloader.file=Caterina-promicro16.hex
 
 dstike.build.protocol_flags=-DENABLE_I2C
-dstike.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
+dstike.build.led_flags=-DNEOPIXEL -DNEOPIXEL_NUM=1
 dstike.build.led_pin=-DLED_PIN=7
 
 ########## Keyboard ID ##########
@@ -158,59 +157,55 @@ atmega32u4.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Seria
 atmega32u4.menu.debug.disabled=Disabled
 
 ########## LED ##########
-atmega32u4.menu.led.disabled=Disabled
-
-atmega32u4.menu.led.neopixel=Neopixel (WS2812b)
-atmega32u4.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+atmega32u4.menu.ledpin.disabled=Disabled
 atmega32u4.menu.ledpin.0=0 (RX Serial) [PD2]
-atmega32u4.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+atmega32u4.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 atmega32u4.menu.ledpin.1=1 (TX Serial) [PD3]
-atmega32u4.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+atmega32u4.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 atmega32u4.menu.ledpin.2=2 (SDA I2C) [PD1]
-atmega32u4.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+atmega32u4.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 atmega32u4.menu.ledpin.3=3 (SCL I2C) [PD0]
-atmega32u4.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+atmega32u4.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 atmega32u4.menu.ledpin.4=4 (A6) [PD4]
-atmega32u4.menu.ledpin.4.build.led_pin=-DLED_PIN=4
+atmega32u4.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DLED_PIN=4
 atmega32u4.menu.ledpin.5=5 [PC6]
-atmega32u4.menu.ledpin.5.build.led_pin=-DLED_PIN=5
+atmega32u4.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DLED_PIN=5
 atmega32u4.menu.ledpin.6=6 (A7) [PD7]
-atmega32u4.menu.ledpin.6.build.led_pin=-DLED_PIN=6
+atmega32u4.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DLED_PIN=6
 atmega32u4.menu.ledpin.7=7 [PE6]
-atmega32u4.menu.ledpin.7.build.led_pin=-DLED_PIN=7
+atmega32u4.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DLED_PIN=7
 atmega32u4.menu.ledpin.8=8 (A8) [PB4]
-atmega32u4.menu.ledpin.8.build.led_pin=-DLED_PIN=8
+atmega32u4.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
 atmega32u4.menu.ledpin.9=9 (A9) [PB5]
-atmega32u4.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+atmega32u4.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 atmega32u4.menu.ledpin.10=10 (A10) [PB6]
-atmega32u4.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+atmega32u4.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 atmega32u4.menu.ledpin.11=11 [PB7]
-atmega32u4.menu.ledpin.11.build.led_pin=-DLED_PIN=11
+atmega32u4.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DLED_PIN=11
 atmega32u4.menu.ledpin.12=12 (A11) [PD6]
-atmega32u4.menu.ledpin.12.build.led_pin=-DLED_PIN=12
+atmega32u4.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DLED_PIN=12
 atmega32u4.menu.ledpin.13=13 [PC7]
-atmega32u4.menu.ledpin.13.build.led_pin=-DLED_PIN=13
+atmega32u4.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DLED_PIN=13
 atmega32u4.menu.ledpin.14=14 (MISO SPI) [PB3]
-atmega32u4.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+atmega32u4.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 atmega32u4.menu.ledpin.15=15 (SCLK SPI) [PB1]
-atmega32u4.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+atmega32u4.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 atmega32u4.menu.ledpin.16=16 (MOSI SPI) [PB2]
-atmega32u4.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+atmega32u4.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 atmega32u4.menu.ledpin.17=17 (SS SPI) [PB0]
-atmega32u4.menu.ledpin.17.build.led_pin=-DLED_PIN=17
+atmega32u4.menu.ledpin.17.build.led_pin=-DNEOPIXEL -DLED_PIN=17
 atmega32u4.menu.ledpin.18=18 (A0) [PF7]
-atmega32u4.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+atmega32u4.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 atmega32u4.menu.ledpin.19=19 (A1) [PF6]
-atmega32u4.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+atmega32u4.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 atmega32u4.menu.ledpin.20=20 (A2) [PF5]
-atmega32u4.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+atmega32u4.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 atmega32u4.menu.ledpin.21=21 (A3) [PF4]
-atmega32u4.menu.ledpin.21.build.led_pin=-DLED_PIN=21
+atmega32u4.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DLED_PIN=21
 atmega32u4.menu.ledpin.22=22 (A4) [PF1]
-atmega32u4.menu.ledpin.22.build.led_pin=-DLED_PIN=22
+atmega32u4.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DLED_PIN=22
 atmega32u4.menu.ledpin.23=23 (A5) [PF0]
-atmega32u4.menu.ledpin.23.build.led_pin=-DLED_PIN=23
+atmega32u4.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DLED_PIN=23
 
 ########## Serial Bridge ##########
 atmega32u4.menu.bridge.disabled=Disabled
@@ -218,6 +213,7 @@ atmega32u4.menu.bridge.disabled=Disabled
 atmega32u4.menu.bridge.serial1=Serial1
 atmega32u4.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+atmega32u4.menu.bridgebutton.disabled=Disabled
 atmega32u4.menu.bridgebutton.2=2 (SDA I2C) [PD1]
 atmega32u4.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 atmega32u4.menu.bridgebutton.3=3 (SCL I2C) [PD0]
@@ -263,6 +259,7 @@ atmega32u4.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
 atmega32u4.menu.bridgebutton.23=23 (A5) [PF0]
 atmega32u4.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
 
+atmega32u4.menu.bridgerst.disabled=Disabled
 atmega32u4.menu.bridgerst.2=2 (SDA I2C) [PD1]
 atmega32u4.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 atmega32u4.menu.bridgerst.3=3 (SCL I2C) [PD0]
@@ -308,6 +305,7 @@ atmega32u4.menu.bridgerst.22.build.bridge_rst=-DBRIDGE_RST=22
 atmega32u4.menu.bridgerst.23=23 (A5) [PF0]
 atmega32u4.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
 
+atmega32u4.menu.bridge0.disabled=Disabled
 atmega32u4.menu.bridge0.2=2 (SDA I2C) [PD1]
 atmega32u4.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 atmega32u4.menu.bridge0.3=3 (SCL I2C) [PD0]
@@ -426,57 +424,53 @@ leonardo.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial 
 leonardo.menu.debug.disabled=Disabled
 
 ########## LED ##########
-leonardo.menu.led.disabled=Disabled
-
-leonardo.menu.led.neopixel=Neopixel (WS2812b)
-leonardo.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+leonardo.menu.ledpin.disabled=Disabled
 leonardo.menu.ledpin.0=0 (RX Serial)
-leonardo.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+leonardo.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 leonardo.menu.ledpin.1=1 (TX Serial)
-leonardo.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+leonardo.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 leonardo.menu.ledpin.2=2 (SDA I2C)
-leonardo.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+leonardo.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 leonardo.menu.ledpin.3=~3 (SCL I2C)
-leonardo.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+leonardo.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 leonardo.menu.ledpin.4=4
-leonardo.menu.ledpin.4.build.led_pin=-DLED_PIN=4
+leonardo.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DLED_PIN=4
 leonardo.menu.ledpin.5=~5
-leonardo.menu.ledpin.5.build.led_pin=-DLED_PIN=5
+leonardo.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DLED_PIN=5
 leonardo.menu.ledpin.6=~6
-leonardo.menu.ledpin.6.build.led_pin=-DLED_PIN=6
+leonardo.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DLED_PIN=6
 leonardo.menu.ledpin.7=7
-leonardo.menu.ledpin.7.build.led_pin=-DLED_PIN=7
+leonardo.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DLED_PIN=7
 leonardo.menu.ledpin.8=8
-leonardo.menu.ledpin.8.build.led_pin=-DLED_PIN=8
+leonardo.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
 leonardo.menu.ledpin.9=~9
-leonardo.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+leonardo.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 leonardo.menu.ledpin.10=~10
-leonardo.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+leonardo.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 leonardo.menu.ledpin.11=~11
-leonardo.menu.ledpin.11.build.led_pin=-DLED_PIN=11
+leonardo.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DLED_PIN=11
 leonardo.menu.ledpin.12=~12
-leonardo.menu.ledpin.12.build.led_pin=-DLED_PIN=12
+leonardo.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DLED_PIN=12
 leonardo.menu.ledpin.13=~13
-leonardo.menu.ledpin.13.build.led_pin=-DLED_PIN=13
+leonardo.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DLED_PIN=13
 leonardo.menu.ledpin.14=ICSP MISO (SPI)
-leonardo.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+leonardo.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 leonardo.menu.ledpin.15=ICSP SCLK (SPI)
-leonardo.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+leonardo.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 leonardo.menu.ledpin.16=ICSP MOSI (SPI)
-leonardo.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+leonardo.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 leonardo.menu.ledpin.18=A0
-leonardo.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+leonardo.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 leonardo.menu.ledpin.19=A1
-leonardo.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+leonardo.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 leonardo.menu.ledpin.20=A2
-leonardo.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+leonardo.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 leonardo.menu.ledpin.21=A3
-leonardo.menu.ledpin.21.build.led_pin=-DLED_PIN=21
+leonardo.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DLED_PIN=21
 leonardo.menu.ledpin.22=A4
-leonardo.menu.ledpin.22.build.led_pin=-DLED_PIN=22
+leonardo.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DLED_PIN=22
 leonardo.menu.ledpin.23=A5
-leonardo.menu.ledpin.23.build.led_pin=-DLED_PIN=23
+leonardo.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DLED_PIN=23
 
 ########## Serial Bridge ##########
 leonardo.menu.bridge.disabled=Disabled
@@ -484,6 +478,7 @@ leonardo.menu.bridge.disabled=Disabled
 leonardo.menu.bridge.serial1=Serial1
 leonardo.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+leonardo.menu.bridgebutton.disabled=Disabled
 leonardo.menu.bridgebutton.2=2 (SDA I2C)
 leonardo.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 leonardo.menu.bridgebutton.3=~3 (SCL I2C)
@@ -527,6 +522,7 @@ leonardo.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
 leonardo.menu.bridgebutton.23=A5
 leonardo.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
 
+leonardo.menu.bridgerst.disabled=Disabled
 leonardo.menu.bridgerst.2=2 (SDA I2C)
 leonardo.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 leonardo.menu.bridgerst.3=~3 (SCL I2C)
@@ -570,6 +566,7 @@ leonardo.menu.bridgerst.222.build.bridge_rst=-DBRIDGE_RST=22
 leonardo.menu.bridgerst.23=A5
 leonardo.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
 
+leonardo.menu.bridge0.disabled=Disabled
 leonardo.menu.bridge0.2=2 (SDA I2C)
 leonardo.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 leonardo.menu.bridge0.3=~3 (SCL I2C)
@@ -686,59 +683,55 @@ micro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DD
 micro.menu.debug.disabled=Disabled
 
 ########## LED ##########
-micro.menu.led.disabled=Disabled
-
-micro.menu.led.neopixel=Neopixel (WS2812b)
-micro.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+micro.menu.ledpin.disabled=Disabled
 micro.menu.ledpin.0=RX (Serial)
-micro.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+micro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 micro.menu.ledpin.1=TX (Serial)
-micro.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+micro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 micro.menu.ledpin.2=2 (SDA I2C)
-micro.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+micro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 micro.menu.ledpin.3=3 (SCL I2C)
-micro.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+micro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 micro.menu.ledpin.4=4
-micro.menu.ledpin.4.build.led_pin=-DLED_PIN=4
+micro.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DLED_PIN=4
 micro.menu.ledpin.5=5
-micro.menu.ledpin.5.build.led_pin=-DLED_PIN=5
+micro.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DLED_PIN=5
 micro.menu.ledpin.6=6
-micro.menu.ledpin.6.build.led_pin=-DLED_PIN=6
+micro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DLED_PIN=6
 micro.menu.ledpin.7=7
-micro.menu.ledpin.7.build.led_pin=-DLED_PIN=7
+micro.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DLED_PIN=7
 micro.menu.ledpin.8=8
-micro.menu.ledpin.8.build.led_pin=-DLED_PIN=8
+micro.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
 micro.menu.ledpin.9=9
-micro.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+micro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 micro.menu.ledpin.10=10
-micro.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+micro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 micro.menu.ledpin.11=11
-micro.menu.ledpin.11.build.led_pin=-DLED_PIN=11
+micro.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DLED_PIN=11
 micro.menu.ledpin.12=12
-micro.menu.ledpin.12.build.led_pin=-DLED_PIN=12
+micro.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DLED_PIN=12
 micro.menu.ledpin.13=13
-micro.menu.ledpin.13.build.led_pin=-DLED_PIN=13
+micro.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DLED_PIN=13
 micro.menu.ledpin.14=MI (MISO SPI)
-micro.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+micro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 micro.menu.ledpin.15=SCK (SCLK SPI)
-micro.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+micro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 micro.menu.ledpin.16=MO (MOSI SPI)
-micro.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+micro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 micro.menu.ledpin.17=SS (SPI)
-micro.menu.ledpin.17.build.led_pin=-DLED_PIN=17
+micro.menu.ledpin.17.build.led_pin=-DNEOPIXEL -DLED_PIN=17
 micro.menu.ledpin.18=A0
-micro.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+micro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 micro.menu.ledpin.19=A1
-micro.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+micro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 micro.menu.ledpin.20=A2
-micro.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+micro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 micro.menu.ledpin.21=A3
-micro.menu.ledpin.21.build.led_pin=-DLED_PIN=21
+micro.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DLED_PIN=21
 micro.menu.ledpin.22=A4
-micro.menu.ledpin.22.build.led_pin=-DLED_PIN=22
+micro.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DLED_PIN=22
 micro.menu.ledpin.23=A5
-micro.menu.ledpin.23.build.led_pin=-DLED_PIN=23
+micro.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DLED_PIN=23
 
 ########## Serial Bridge ##########
 micro.menu.bridge.disabled=Disabled
@@ -746,6 +739,7 @@ micro.menu.bridge.disabled=Disabled
 micro.menu.bridge.serial1=Serial1
 micro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+micro.menu.bridgebutton.disabled=Disabled
 micro.menu.bridgebutton.2=2 (SDA I2C)
 micro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 micro.menu.bridgebutton.3=3 (SCL I2C)
@@ -791,6 +785,7 @@ micro.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
 micro.menu.bridgebutton.23=A5
 micro.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
 
+micro.menu.bridgerst.disabled=Disabled
 micro.menu.bridgerst.2=2 (SDA I2C)
 micro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 micro.menu.bridgerst.3=3 (SCL I2C)
@@ -836,6 +831,7 @@ micro.menu.bridgerst.22.build.bridge_rst=-DBRIDGE_RST=22
 micro.menu.bridgerst.23=A5
 micro.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
 
+micro.menu.bridge0.disabled=Disabled
 micro.menu.bridge0.2=2 (SDA I2C)
 micro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 micro.menu.bridge0.3=3 (SCL I2C)
@@ -964,47 +960,43 @@ promicro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial 
 promicro.menu.debug.disabled=Disabled
 
 ########## LED ##########
-promicro.menu.led.disabled=Disabled
-
-promicro.menu.led.neopixel=Neopixel (WS2812b)
-promicro.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+promicro.menu.ledpin.disabled=Disabled
 promicro.menu.ledpin.0=RX (Serial)
-promicro.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+promicro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 promicro.menu.ledpin.1=TX (Serial)
-promicro.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+promicro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 promicro.menu.ledpin.2=2 (SDA I2C)
-promicro.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+promicro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 promicro.menu.ledpin.3=3 (SCL I2C)
-promicro.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+promicro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 promicro.menu.ledpin.4=4
-promicro.menu.ledpin.4.build.led_pin=-DLED_PIN=4
+promicro.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DLED_PIN=4
 promicro.menu.ledpin.5=5
-promicro.menu.ledpin.5.build.led_pin=-DLED_PIN=5
+promicro.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DLED_PIN=5
 promicro.menu.ledpin.6=6
-promicro.menu.ledpin.6.build.led_pin=-DLED_PIN=6
+promicro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DLED_PIN=6
 promicro.menu.ledpin.7=7
-promicro.menu.ledpin.7.build.led_pin=-DLED_PIN=7
+promicro.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DLED_PIN=7
 promicro.menu.ledpin.8=8
-promicro.menu.ledpin.8.build.led_pin=-DLED_PIN=8
+promicro.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DLED_PIN=8
 promicro.menu.ledpin.9=9
-promicro.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+promicro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 promicro.menu.ledpin.10=10
-promicro.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+promicro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 promicro.menu.ledpin.14=14
-promicro.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+promicro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 promicro.menu.ledpin.15=15
-promicro.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+promicro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 promicro.menu.ledpin.16=16
-promicro.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+promicro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 promicro.menu.ledpin.18=A0
-promicro.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+promicro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 promicro.menu.ledpin.19=A1
-promicro.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+promicro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 promicro.menu.ledpin.20=A2
-promicro.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+promicro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 promicro.menu.ledpin.21=A3
-promicro.menu.ledpin.21.build.led_pin=-DLED_PIN=21
+promicro.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DLED_PIN=21
 
 
 ########## Serial Bridge ##########
@@ -1013,6 +1005,7 @@ promicro.menu.bridge.disabled=Disabled
 promicro.menu.bridge.serial1=Serial1
 promicro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+promicro.menu.bridgebutton.disabled=Disabled
 promicro.menu.bridgebutton.2=2 (SDA I2C)
 promicro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 promicro.menu.bridgebutton.3=3 (SCL I2C)
@@ -1046,6 +1039,7 @@ promicro.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
 promicro.menu.bridgebutton.21=A3
 promicro.menu.bridgebutton.21.build.bridge_button=-DBRIDGE_SWITCH=21
 
+promicro.menu.bridgerst.disabled=Disabled
 promicro.menu.bridgerst.2=2 (SDA I2C)
 promicro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 promicro.menu.bridgerst.3=3 (SCL I2C)
@@ -1079,6 +1073,7 @@ promicro.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
 promicro.menu.bridgerst.21=A3
 promicro.menu.bridgerst.21.build.bridge_rst=-DBRIDGE_RST=21
 
+promicro.menu.bridge0.disabled=Disabled
 promicro.menu.bridge0.2=2 (SDA I2C)
 promicro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 promicro.menu.bridge0.3=3 (SCL I2C)
@@ -1186,37 +1181,33 @@ cjmcu.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DD
 cjmcu.menu.debug.disabled=Disabled
 
 ########## LED ##########
-cjmcu.menu.led.disabled=Disabled
-
-cjmcu.menu.led.neopixel=Neopixel (WS2812b)
-cjmcu.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+cjmcu.menu.ledpin.disabled=Disabled
 cjmcu.menu.ledpin.0=RX (Serial)
-cjmcu.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+cjmcu.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 cjmcu.menu.ledpin.1=TX (Serial)
-cjmcu.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+cjmcu.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 cjmcu.menu.ledpin.2=SDA (I2C)
-cjmcu.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+cjmcu.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 cjmcu.menu.ledpin.3=SCL (I2C)
-cjmcu.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+cjmcu.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 cjmcu.menu.ledpin.9=D9
-cjmcu.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+cjmcu.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 cjmcu.menu.ledpin.10=D10
-cjmcu.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+cjmcu.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 cjmcu.menu.ledpin.11=D11
-cjmcu.menu.ledpin.11.build.led_pin=-DLED_PIN=11
+cjmcu.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DLED_PIN=11
 cjmcu.menu.ledpin.14=MI (MISO SPI)
-cjmcu.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+cjmcu.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 cjmcu.menu.ledpin.15=SCK (SCLK SPI)
-cjmcu.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+cjmcu.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 cjmcu.menu.ledpin.16=MO (MOSI SPI)
-cjmcu.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+cjmcu.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 cjmcu.menu.ledpin.18=A0
-cjmcu.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+cjmcu.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 cjmcu.menu.ledpin.19=A1
-cjmcu.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+cjmcu.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 cjmcu.menu.ledpin.20=A2
-cjmcu.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+cjmcu.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 
 ########## Serial Bridge ##########
 cjmcu.menu.bridge.disabled=Disabled
@@ -1224,6 +1215,7 @@ cjmcu.menu.bridge.disabled=Disabled
 cjmcu.menu.bridge.serial1=Serial1
 cjmcu.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+cjmcu.menu.bridgebutton.disabled=Disabled
 cjmcu.menu.bridgebutton.2=SDA (I2C)
 cjmcu.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 cjmcu.menu.bridgebutton.3=SCL (I2C)
@@ -1247,6 +1239,7 @@ cjmcu.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
 cjmcu.menu.bridgebutton.20=A2
 cjmcu.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
 
+cjmcu.menu.bridgerst.disabled=Disabled
 cjmcu.menu.bridgerst.2=SDA (I2C)
 cjmcu.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 cjmcu.menu.bridgerst.3=SCL (I2C)
@@ -1270,6 +1263,7 @@ cjmcu.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
 cjmcu.menu.bridgerst.20=A2
 cjmcu.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
 
+cjmcu.menu.bridge0.disabled=Disabled
 cjmcu.menu.bridge0.2=SDA (I2C)
 cjmcu.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 cjmcu.menu.bridge0.3=SCL (I2C)
@@ -1367,39 +1361,35 @@ ssmicro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -
 ssmicro.menu.debug.disabled=Disabled
 
 ########## LED ##########
-ssmicro.menu.led.disabled=Disabled
-
-ssmicro.menu.led.neopixel=Neopixel (WS2812b)
-ssmicro.menu.led.neopixel.build.led_flags=-DENABLE_LED -DNEOPIXEL -DNEOPIXEL_NUM=1
-
+ssmicro.menu.ledpin.disabled=Disabled
 ssmicro.menu.ledpin.0=D0 RX (Serial)
-ssmicro.menu.ledpin.0.build.led_pin=-DLED_PIN=0
+ssmicro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DLED_PIN=0
 ssmicro.menu.ledpin.1=D1 TX (Serial)
-ssmicro.menu.ledpin.1.build.led_pin=-DLED_PIN=1
+ssmicro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DLED_PIN=1
 ssmicro.menu.ledpin.2=D2 SDA (I2C)
-ssmicro.menu.ledpin.2.build.led_pin=-DLED_PIN=2
+ssmicro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DLED_PIN=2
 ssmicro.menu.ledpin.3=D3 SCL (I2C)
-ssmicro.menu.ledpin.3.build.led_pin=-DLED_PIN=3
+ssmicro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DLED_PIN=3
 ssmicro.menu.ledpin.6=D6 A8
-ssmicro.menu.ledpin.6.build.led_pin=-DLED_PIN=6
+ssmicro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DLED_PIN=6
 ssmicro.menu.ledpin.9=D9 A10
-ssmicro.menu.ledpin.9.build.led_pin=-DLED_PIN=9
+ssmicro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DLED_PIN=9
 ssmicro.menu.ledpin.10=D10 A11
-ssmicro.menu.ledpin.10.build.led_pin=-DLED_PIN=10
+ssmicro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DLED_PIN=10
 ssmicro.menu.ledpin.11=D11
-ssmicro.menu.ledpin.11.build.led_pin=-DLED_PIN=11
+ssmicro.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DLED_PIN=11
 ssmicro.menu.ledpin.14=D14 MI (MISO SPI)
-ssmicro.menu.ledpin.14.build.led_pin=-DLED_PIN=14
+ssmicro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DLED_PIN=14
 ssmicro.menu.ledpin.15=D15 SCK (SCLK SPI)
-ssmicro.menu.ledpin.15.build.led_pin=-DLED_PIN=15
+ssmicro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DLED_PIN=15
 ssmicro.menu.ledpin.16=D16 MO (MOSI SPI)
-ssmicro.menu.ledpin.16.build.led_pin=-DLED_PIN=16
+ssmicro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DLED_PIN=16
 ssmicro.menu.ledpin.18=A0
-ssmicro.menu.ledpin.18.build.led_pin=-DLED_PIN=18
+ssmicro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DLED_PIN=18
 ssmicro.menu.ledpin.19=A1
-ssmicro.menu.ledpin.19.build.led_pin=-DLED_PIN=19
+ssmicro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DLED_PIN=19
 ssmicro.menu.ledpin.20=A2
-ssmicro.menu.ledpin.20.build.led_pin=-DLED_PIN=20
+ssmicro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DLED_PIN=20
 
 ########## Serial Bridge ##########
 ssmicro.menu.bridge.disabled=Disabled
@@ -1407,6 +1397,7 @@ ssmicro.menu.bridge.disabled=Disabled
 ssmicro.menu.bridge.serial1=Serial1
 ssmicro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
+ssmicro.menu.bridgebutton.disabled=Disabled
 ssmicro.menu.bridgebutton.2=D2 SDA (I2C)
 ssmicro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
 ssmicro.menu.bridgebutton.3=D3 SCL (I2C)
@@ -1432,6 +1423,7 @@ ssmicro.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
 ssmicro.menu.bridgebutton.20=A2
 ssmicro.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
 
+ssmicro.menu.bridgerst.disabled=Disabled
 ssmicro.menu.bridgerst.2=D2 SDA (I2C)
 ssmicro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
 ssmicro.menu.bridgerst.3=D3 SCL (I2C)
@@ -1457,6 +1449,7 @@ ssmicro.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
 ssmicro.menu.bridgerst.20=A2
 ssmicro.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
 
+ssmicro.menu.bridge0.disabled=Disabled
 ssmicro.menu.bridge0.2=D2 SDA (I2C)
 ssmicro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
 ssmicro.menu.bridge0.3=D3 SCL (I2C)
