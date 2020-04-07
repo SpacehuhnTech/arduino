@@ -218,7 +218,7 @@ adafruit_trinket_m0.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
 
 # Project Sero
 # ------------------------------
-project_sero.name=Project Sero
+project_sero.name=Project Sero (SAMD)
 #project_sero.vid.0=0x239A
 #project_sero.pid.0=0x801E
 #project_sero.vid.1=0x239A
