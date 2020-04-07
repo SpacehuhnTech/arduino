@@ -1,3 +1,8 @@
+libraries:
+ - Added ESPAsyncTCP
+ - Added ESPAsyncWebServer
+ - Added SimpleCLI
+
 boards.txt
  - Added DSTIKE board
  - Removed every other board except generic ESP866/85, NodeMCU and Lolin/Wemos d1 mini
