@@ -22,7 +22,7 @@ for i, project in enumerate(projects):
         "websiteURL": "https://spacehuhn.tech",
         "email": "support@spacehuhn.tech",
         "help": {
-            "online": f"https://github.com/spacehuhntech/arduino{project}",
+            "online": f"https://github.com/spacehuhntech",
         },
         "platforms": [],
         "tools": [],
@@ -34,7 +34,7 @@ for i, project in enumerate(projects):
         
         if path.exists(platform_file):
             with open(platform_file) as f:
-                project_json["platforms"].append(json.load(f))
+                project_json["platforms"] = json.load(f)
 
     # Tools
     tools_file = f"{project}/{package}/tools.json"

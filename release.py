@@ -52,7 +52,7 @@ with open(template_file) as f:
 template_json["version"] = version
 template_json["url"] = link
 template_json["archiveFileName"] = zip_file
-template_json["checksum"] = zip_hash
+template_json["checksum"] = f"SHA-256:{zip_hash}"
 template_json["size"] = zip_size
 
 platform_json.append(template_json)
