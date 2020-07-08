@@ -14,20 +14,8 @@ jobs:
           fetch-depth: 0
           ref: main
 
-      - name: Checkout package
-        env:
-          PROJECT: ${{ github.event.client_payload.project }}
-          PACKAGE: ${{ github.event.client_payload.package }}
-        run: |
-          cd ${{ env.PROJECT }}
-          git clone https://github.com/SpacehuhnTech/arduino-${{ env.PACKAGE }} ${{ env.PACKAGE }}
-          cd ${{ env.PACKAGE }}
-          git fetch
-          git checkout ${{ env.PROJECT }}
-          git pull
-          git submodule update --init --recursive
-          cd ..
-          cd ..
+      - name: Clone projects
+        run: python3 init.py
 
       - name: Create release files
         env:

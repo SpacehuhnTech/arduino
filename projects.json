@@ -1,0 +1,10 @@
+{
+    "deauther": [
+        "esp8266"
+    ],
+    "wifiduck": [
+        "esp8266",
+        "avr",
+        "samd"
+    ]
+}

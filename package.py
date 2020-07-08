@@ -5,16 +5,10 @@ from os import path
 
 import json
 
-projects = {
-    "deauther": [
-        "esp8266",
-    ],
-    "wifiduck": [
-        "esp8266",
-        "avr",
-        "samd",
-    ]
-}
+projects = {}
+
+with open("projects.json") as f:
+    projects = json.load(f)
 
 index_json = {
     "packages": []
