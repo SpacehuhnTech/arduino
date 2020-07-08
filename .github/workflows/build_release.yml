@@ -1,0 +1,79 @@
+name: Build release
+
+on: [repository_dispatch]
+
+jobs:
+
+  prepare:
+    name: "Prepare for release"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Checkout package
+        env:
+          PROJECT: ${{ github.event.client_payload.project }}
+          PACKAGE: ${{ github.event.client_payload.package }}
+        run: |
+          cd ${{ env.PROJECT }}
+          git clone https://github.com/SpacehuhnTech/arduino-${{ env.PACKAGE }} ${{ env.PACKAGE }}
+          cd ${{ env.PACKAGE }}
+          git fetch
+          git checkout ${{ env.PROJECT }}
+          git pull
+          cd ..
+          cd ..
+
+      - name: Create release files
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+          PROJECT: ${{ github.event.client_payload.project }}
+          PACKAGE: ${{ github.event.client_payload.package }}
+        run: ./release.sh ${{ env.PROJECT }} ${{ env.PACKAGE }} ${{ env.VERSION }}
+      
+      - name: Build new package.json
+        run: ./publish.sh
+      
+      - name: Push changes
+        uses: EndBug/add-and-commit@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.client_payload.tag }}
+        with:
+          author_name: Spacehuhn Bot
+          author_email: bot@spacehuhn.tech
+          message: Release ${{ env.TAG }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ github.event.client_payload.version }}
+          PROJECT: ${{ github.event.client_payload.project }}
+          PACKAGE: ${{ github.event.client_payload.package }}
+          TAG: ${{ github.event.client_payload.tag }}
+        with:
+          tag_name: ${{ env.TAG }}
+          release_name: Release ${{ env.TAG }}
+          body: Automated release of [arduino-${{ env.PACKAGE }}-${{ env.PROJECT }}](https://github.com/SpacehuhnTech/arduino-${{ env.PACKAGE }}/tree/${{ env.PROJECT }})
+          draft: false
+          prerelease: false
+      
+      - name: Upload assets
+        uses: svenstaro/upload-release-action@v1-release
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+          PROJECT: ${{ github.event.client_payload.project }}
+          PACKAGE: ${{ github.event.client_payload.package }}
+          TAG: ${{ github.event.client_payload.tag }}
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ env.PROJECT }}-${{ env.PACKAGE }}-arduino-core-${{ env.VERSION }}.zip
+          asset_name: ${{ env.PROJECT }}-${{ env.PACKAGE }}-arduino-core-${{ env.VERSION }}.zip
+          tag: ${{ env.TAG }}
+          overwrite: true
