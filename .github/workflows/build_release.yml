@@ -25,6 +25,7 @@ jobs:
           git fetch
           git checkout ${{ env.PROJECT }}
           git pull
+          git submodule update --init --recursive
           cd ..
           cd ..
 

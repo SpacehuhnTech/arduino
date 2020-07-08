@@ -39,7 +39,7 @@ zip -r "../$zip_file" "$package/" -q
 #mv "$package/platform.txt-e" "$package/platform.txt"
 
 # Get file size
-size=$(stat -f%z "../$zip_file")
+size=$(stat -f %z "../$zip_file")
 
 # Hash
 hash=$(shasum -a 256 "../$zip_file" | cut -d ' ' -f 1)
