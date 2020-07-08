@@ -34,10 +34,10 @@ jobs:
           VERSION: ${{ github.event.client_payload.version }}
           PROJECT: ${{ github.event.client_payload.project }}
           PACKAGE: ${{ github.event.client_payload.package }}
-        run: ./release.sh ${{ env.PROJECT }} ${{ env.PACKAGE }} ${{ env.VERSION }}
+        run: python3 release.py ${{ env.PROJECT }} ${{ env.PACKAGE }} ${{ env.VERSION }}
       
       - name: Build new package.json
-        run: ./publish.sh
+        run: python3 package.py
       
       - name: Push changes
         uses: EndBug/add-and-commit@v4
