@@ -23,7 +23,7 @@ template_file = f"{project}/{package}/platform_template.json"
 zip_file = f"{project}-{package}-arduino-core-{version}.zip"
 
 # Update version number in platform.txt
-os.system(f"sed -i -e 's/version=X.X.X/version={version}/g' {project}/{package}/platform.txt")
+os.system(f"sed -i -e 's/X.X.X/{version}/g' {project}/{package}/platform.txt")
 
 # ZIP it
 os.system(f"cd {project} && zip -r '../{zip_file}' '{package}/' -q")
