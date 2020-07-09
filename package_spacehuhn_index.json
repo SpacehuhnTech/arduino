@@ -352,6 +352,64 @@
                             "version": "1.3.0"
                         }
                     ]
+                },
+                {
+                    "name": "WiFi Duck SAMD Boards",
+                    "architecture": "samd",
+                    "version": "1.5.14",
+                    "category": "wifiduck",
+                    "url": "https://github.com/spacehuhntech/arduino/releases/download/wifiduck-samd-1.5.14/wifiduck-samd-arduino-core-1.5.14.zip",
+                    "archiveFileName": "wifiduck-samd-arduino-core-1.5.14.zip",
+                    "checksum": "SHA-256:22d28fe0c27e0a4b31a883983be20995d56991444e448150fb98081bd7bb8a1d",
+                    "size": 22994141,
+                    "help": {
+                        "online": "https://github.com/spacehuhn/WiFiDuck"
+                    },
+                    "boards": [
+                        {
+                            "name": "Adafruit Trinket M0 (SAMD21)"
+                        },
+                        {
+                            "name": "Project Sero (SAMD21)"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "wifiduck",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "7-2017q4"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "bossac",
+                            "version": "1.7.0-arduino3"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "bossac",
+                            "version": "1.8.0-48-gb176eee"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "openocd",
+                            "version": "0.10.0-arduino7"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "CMSIS",
+                            "version": "4.5.0"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "CMSIS-Atmel",
+                            "version": "1.2.0"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "name": "arduinoOTA",
+                            "version": "1.2.1"
+                        }
+                    ]
                 }
             ],
             "tools": [
