@@ -36,10 +36,12 @@ for i, project in enumerate(projects):
             with open(platform_file) as f:
                 project_json["platforms"] = json.load(f)
 
-    # Tools
-    tools_file = f"{project}/{package}/tools.json"
-    with open(tools_file) as f:
-        project_json["tools"] = json.load(f)
+        # Tools
+        tools_file = f"{project}/{package}/tools.json"
+        with open(tools_file) as f:
+            tools = json.load(f)
+            for t in tools:
+                project_json["tools"].append(t)
 
     index_json["packages"].append(project_json)
 
