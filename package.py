@@ -34,7 +34,9 @@ for i, project in enumerate(projects):
         
         if path.exists(platform_file):
             with open(platform_file) as f:
-                project_json["platforms"] = json.load(f)
+                platforms = json.load(f)
+                for p in platforms:
+                    project_json["platforms"].append(p)
 
         # Tools
         tools_file = f"{project}/{package}/tools.json"
