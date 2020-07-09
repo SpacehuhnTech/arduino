@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Deauther ESP8266 Boards",
+        "architecture": "esp8266",
+        "version": "2.7.2",
+        "category": "deauther",
+        "url": "https://github.com/spacehuhntech/arduino/releases/download/deauther-esp8266-2.7.2/deauther-esp8266-arduino-core-2.7.2.zip",
+        "archiveFileName": "deauther-esp8266-arduino-core-2.7.2.zip",
+        "checksum": "SHA-256:5d564a4008a4c12121e4f73609b10df27e17a43fef7d8be2c8a4fa9341e2a82a",
+        "size": 169491898,
+        "help": {
+            "online": "https://github.com/spacehuhntech/esp8266_deauther"
+        },
+        "boards": [
+            {
+                "name": "Generic ESP8266"
+            },
+            {
+                "name": "Generic ESP8285"
+            },
+            {
+                "name": "Adafruit Feather HUZZAH"
+            },
+            {
+                "name": "NodeMCU"
+            },
+            {
+                "name": "LOLIN(WEMOS) D1 mini"
+            }
+        ],
+        "toolsDependencies": [
+            {
+                "packager": "deauther",
+                "version": "2.5.0-4-b40a506",
+                "name": "xtensa-lx106-elf-gcc"
+            },
+            {
+                "packager": "deauther",
+                "version": "2.5.0-4-b40a506",
+                "name": "mkspiffs"
+            },
+            {
+                "packager": "deauther",
+                "version": "2.5.0-4-fe5bb56",
+                "name": "mklittlefs"
+            },
+            {
+                "packager": "deauther",
+                "version": "3.7.2-post1",
+                "name": "python3"
+            }
+        ]
+    }
+]
