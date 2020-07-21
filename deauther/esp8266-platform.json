@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Deauther ESP8266 Boards",
+        "architecture": "esp8266",
+        "version": "2.0.0",
+        "category": "deauther",
+        "url": "https://github.com/spacehuhntech/arduino/releases/download/deauther-esp8266-2.0.0/deauther-esp8266-arduino-core-2.0.0.zip",
+        "archiveFileName": "deauther-esp8266-arduino-core-2.0.0.zip",
+        "checksum": "SHA-256:0fbc5acd8455827231c6541dc05a4694794d8f5fa0d609a61516212f6bdfbb99",
+        "size": "6699955",
+        "help": {
+            "online": "https://github.com/spacehuhntech/esp8266_deauther"
+        },
+        "boards": [
+            {
+                "name": "DSTIKE by Travis Lin"
+            },
+            {
+                "name": "NodeMCU 0.9 (ESP-12 Module)"
+            },
+            {
+                "name": "NodeMCU 1.0 (ESP-12E Module)"
+            },
+            {
+                "name": "Adafruit HUZZAH ESP8266"
+            },
+            {
+                "name": "WEMOS D1 mini"
+            },
+            {
+                "name": "Olimex MOD-WIFI-ESP8266(-DEV)"
+            },
+            {
+                "name": "SparkFun ESP8266 Thing"
+            },
+            {
+                "name": "SweetPea ESP-210"
+            },
+            {
+                "name": "Generic ESP8266 Module"
+            },
+            {
+                "name": "Generic ESP8285 Module"
+            }
+        ],
+        "toolsDependencies": [
+            {
+                "packager": "esp8266",
+                "version": "0.1.2",
+                "name": "mkspiffs"
+            },
+            {
+                "packager": "esp8266",
+                "version": "0.4.9",
+                "name": "esptool"
+            },
+            {
+                "packager": "esp8266",
+                "version": "1.20.0-26-gb404fb9-2",
+                "name": "xtensa-lx106-elf-gcc"
+            }
+        ]
+    }
+]
