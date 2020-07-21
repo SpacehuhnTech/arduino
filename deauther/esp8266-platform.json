@@ -6,8 +6,8 @@
         "category": "deauther",
         "url": "https://github.com/spacehuhntech/arduino/releases/download/deauther-esp8266-2.0.0/deauther-esp8266-arduino-core-2.0.0.zip",
         "archiveFileName": "deauther-esp8266-arduino-core-2.0.0.zip",
-        "checksum": "SHA-256:0fbc5acd8455827231c6541dc05a4694794d8f5fa0d609a61516212f6bdfbb99",
-        "size": "6699955",
+        "checksum": "SHA-256:605ce200faa13d4689187255e9df7b4bd5979cf0b13b31e87fd0b1b3b462ccdb",
+        "size": "6700038",
         "help": {
             "online": "https://github.com/spacehuhntech/esp8266_deauther"
         },
