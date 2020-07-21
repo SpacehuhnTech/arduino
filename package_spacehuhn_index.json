@@ -8,7 +8,122 @@
             "help": {
                 "online": "https://github.com/spacehuhntech"
             },
-            "platforms": [],
+            "platforms": [
+                {
+                    "name": "Deauther ESP8266 Boards",
+                    "architecture": "esp8266",
+                    "version": "2.0.0",
+                    "category": "deauther",
+                    "url": "https://github.com/spacehuhntech/arduino/releases/download/deauther-esp8266-2.0.0/deauther-esp8266-arduino-core-2.0.0.zip",
+                    "archiveFileName": "deauther-esp8266-arduino-core-2.0.0.zip",
+                    "checksum": "SHA-256:0fbc5acd8455827231c6541dc05a4694794d8f5fa0d609a61516212f6bdfbb99",
+                    "size": "6699955",
+                    "help": {
+                        "online": "https://github.com/spacehuhntech/esp8266_deauther"
+                    },
+                    "boards": [
+                        {
+                            "name": "DSTIKE by Travis Lin"
+                        },
+                        {
+                            "name": "NodeMCU 0.9 (ESP-12 Module)"
+                        },
+                        {
+                            "name": "NodeMCU 1.0 (ESP-12E Module)"
+                        },
+                        {
+                            "name": "Adafruit HUZZAH ESP8266"
+                        },
+                        {
+                            "name": "WEMOS D1 mini"
+                        },
+                        {
+                            "name": "Olimex MOD-WIFI-ESP8266(-DEV)"
+                        },
+                        {
+                            "name": "SparkFun ESP8266 Thing"
+                        },
+                        {
+                            "name": "SweetPea ESP-210"
+                        },
+                        {
+                            "name": "Generic ESP8266 Module"
+                        },
+                        {
+                            "name": "Generic ESP8285 Module"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "esp8266",
+                            "version": "0.1.2",
+                            "name": "mkspiffs"
+                        },
+                        {
+                            "packager": "esp8266",
+                            "version": "0.4.9",
+                            "name": "esptool"
+                        },
+                        {
+                            "packager": "esp8266",
+                            "version": "1.20.0-26-gb404fb9-2",
+                            "name": "xtensa-lx106-elf-gcc"
+                        }
+                    ]
+                },
+                {
+                    "name": "Deauther ESP8266 Boards",
+                    "architecture": "esp8266",
+                    "version": "2.7.2",
+                    "category": "deauther",
+                    "url": "https://github.com/spacehuhntech/arduino/releases/download/deauther-esp8266-2.7.2/deauther-esp8266-arduino-core-2.7.2.zip",
+                    "archiveFileName": "deauther-esp8266-arduino-core-2.7.2.zip",
+                    "checksum": "SHA-256:daf82233e397eac23bfff74d8f7f478ecd60d8f49cd67dc4d7d6502b54f97cc4",
+                    "size": 169611509,
+                    "help": {
+                        "online": "https://github.com/spacehuhntech/esp8266_deauther"
+                    },
+                    "boards": [
+                        {
+                            "name": "Generic ESP8266"
+                        },
+                        {
+                            "name": "Generic ESP8285"
+                        },
+                        {
+                            "name": "Adafruit Feather HUZZAH"
+                        },
+                        {
+                            "name": "NodeMCU"
+                        },
+                        {
+                            "name": "LOLIN(WEMOS) D1 mini"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "deauther",
+                            "version": "2.5.0-4-b40a506",
+                            "name": "xtensa-lx106-elf-gcc"
+                        },
+                        {
+                            "packager": "deauther",
+                            "version": "2.5.0-4-b40a506",
+                            "name": "mkspiffs"
+                        },
+                        {
+                            "packager": "deauther",
+                            "version": "2.5.0-4-fe5bb56",
+                            "name": "mklittlefs"
+                        },
+                        {
+                            "packager": "deauther",
+                            "version": "3.7.2-post1",
+                            "name": "python3"
+                        }
+                    ]
+                }
+            ],
             "tools": [
                 {
                     "version": "3.7.2-post1",
@@ -234,6 +349,150 @@
                             "archiveFileName": "x86_64-w64-mingw32.mklittlefs-fe5bb56.1578453304.zip",
                             "checksum": "SHA-256:a460f410a22a59e23d7f862b8d08d6b7dfbc93aa558f8161a3d640d4df2ab86f",
                             "size": "344792"
+                        }
+                    ]
+                },
+                {
+                    "version": "1.20.0-26-gb404fb9-2",
+                    "name": "xtensa-lx106-elf-gcc",
+                    "systems": [
+                        {
+                            "url": "https://github.com/esp8266/Arduino/releases/download/2.3.0/win32-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "checksum": "SHA-256:10476b9c11a7a90f40883413ddfb409f505b20692e316c4e597c4c175b4be09c",
+                            "host": "i686-mingw32",
+                            "archiveFileName": "win32-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "size": "153527527"
+                        },
+                        {
+                            "url": "https://github.com/esp8266/Arduino/releases/download/2.3.0/osx-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "checksum": "SHA-256:0cf150193997bd1355e0f49d3d49711730035257bc1aee1eaaad619e56b9e4e6",
+                            "host": "x86_64-apple-darwin",
+                            "archiveFileName": "osx-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "size": "35385382"
+                        },
+                        {
+                            "url": "https://github.com/esp8266/Arduino/releases/download/2.3.0/osx-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "checksum": "SHA-256:0cf150193997bd1355e0f49d3d49711730035257bc1aee1eaaad619e56b9e4e6",
+                            "host": "i386-apple-darwin",
+                            "archiveFileName": "osx-xtensa-lx106-elf-gb404fb9-2.tar.gz",
+                            "size": "35385382"
+                        },
+                        {
+                            "url": "https://github.com/esp8266/Arduino/releases/download/2.3.0/linux64-xtensa-lx106-elf-gb404fb9.tgz",
+                            "checksum": "SHA-256:46f057fbd8b320889a26167daf325038912096d09940b2a95489db92431473b7",
+                            "host": "x86_64-pc-linux-gnu",
+                            "archiveFileName": "linux64-xtensa-lx106-elf-gb404fb9.tar.gz",
+                            "size": "30262903"
+                        },
+                        {
+                            "url": "https://github.com/esp8266/Arduino/releases/download/2.3.0/linux32-xtensa-lx106-elf.tar.gz",
+                            "checksum": "SHA-256:b24817819f0078fb05895a640e806e0aca9aa96b47b80d2390ac8e2d9ddc955a",
+                            "host": "i686-pc-linux-gnu",
+                            "archiveFileName": "linux32-xtensa-lx106-elf.tar.gz",
+                            "size": "32734156"
+                        },
+                        {
+                            "url": "http://arduino.esp8266.com/linuxarm-xtensa-lx106-elf-g46f160f-2.tar.gz",
+                            "checksum": "SHA-256:f693946288f2ffa17288ef75ae16fa08573993f2b0a2a5e6bc35a68dc6087443",
+                            "host": "arm-linux-gnueabihf",
+                            "archiveFileName": "linuxarm-xtensa-lx106-elf-g46f160f-2.tar.gz",
+                            "size": "34938475"
+                        }
+                    ]
+                },
+                {
+                    "version": "0.4.9",
+                    "name": "esptool",
+                    "systems": [
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-win32.zip",
+                            "checksum": "SHA-256:9c4162cedf05fcb09fd829bfb90e34ae12458365980d79525a072ff5ca44751c",
+                            "host": "i686-mingw32",
+                            "archiveFileName": "esptool-0.4.9-win32.zip",
+                            "size": "32436"
+                        },
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-osx.tar.gz",
+                            "checksum": "SHA-256:57938b473765723a7e6602d55973017b7719bda69bdcff4250b24fcbf7a399f5",
+                            "host": "x86_64-apple-darwin",
+                            "archiveFileName": "esptool-0.4.9-osx.tar.gz",
+                            "size": "29310"
+                        },
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-osx.tar.gz",
+                            "checksum": "SHA-256:57938b473765723a7e6602d55973017b7719bda69bdcff4250b24fcbf7a399f5",
+                            "host": "i386-apple-darwin",
+                            "archiveFileName": "esptool-0.4.9-osx.tar.gz",
+                            "size": "29310"
+                        },
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-linux64.tar.gz",
+                            "checksum": "SHA-256:fab9d1be8a648bea6728ad5c9d18ce972508187700cf90baf1897ac9cdf4db15",
+                            "host": "x86_64-pc-linux-gnu",
+                            "archiveFileName": "esptool-0.4.9-linux64.tar.gz",
+                            "size": "15564"
+                        },
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-linux32.tar.gz",
+                            "checksum": "SHA-256:bc4444d73d59be74608be5e1431353a0a9ae9e308e99c76a271d68a6ae145b7b",
+                            "host": "i686-pc-linux-gnu",
+                            "archiveFileName": "esptool-0.4.9-linux32.tar.gz",
+                            "size": "15984"
+                        },
+                        {
+                            "url": "https://github.com/igrr/esptool-ck/releases/download/0.4.9/esptool-0.4.9-linux-armhf.tar.gz",
+                            "checksum": "SHA-256:d0364492599d90b8305125f8212de5be05397e4efde2fc7d0ed3676bb7018164",
+                            "host": "arm-linux-gnueabihf",
+                            "archiveFileName": "esptool-0.4.9-linux-armhf.tar.gz",
+                            "size": "13763"
+                        }
+                    ]
+                },
+                {
+                    "version": "0.1.2",
+                    "name": "mkspiffs",
+                    "systems": [
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-windows.zip",
+                            "checksum": "SHA-256:0a29119b8458b61a877408f7995e4944623a712e0d313a2c2f76af9ab55cc9f2",
+                            "host": "i686-mingw32",
+                            "archiveFileName": "mkspiffs-0.1.2-windows.zip",
+                            "size": "230802"
+                        },
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-osx.tar.gz",
+                            "checksum": "SHA-256:df656fae21a41c1269ea50cb53752dcaf6a4e1437255f3a9fb50b4025549b58e",
+                            "host": "x86_64-apple-darwin",
+                            "archiveFileName": "mkspiffs-0.1.2-osx.tar.gz",
+                            "size": "115091"
+                        },
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-osx.tar.gz",
+                            "checksum": "SHA-256:df656fae21a41c1269ea50cb53752dcaf6a4e1437255f3a9fb50b4025549b58e",
+                            "host": "i386-apple-darwin",
+                            "archiveFileName": "mkspiffs-0.1.2-osx.tar.gz",
+                            "size": "115091"
+                        },
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-linux64.tar.gz",
+                            "checksum": "SHA-256:1a1dd81b51daf74c382db71b42251757ca4136e8762107e69feaa8617bac315f",
+                            "host": "x86_64-pc-linux-gnu",
+                            "archiveFileName": "mkspiffs-0.1.2-linux64.tar.gz",
+                            "size": "46281"
+                        },
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-linux32.tar.gz",
+                            "checksum": "SHA-256:e990d545dfcae308aabaac5fa9e1db734cc2b08167969e7eedac88bd0839667c",
+                            "host": "i686-pc-linux-gnu",
+                            "archiveFileName": "mkspiffs-0.1.2-linux32.tar.gz",
+                            "size": "45272"
+                        },
+                        {
+                            "url": "https://github.com/igrr/mkspiffs/releases/download/0.1.2/mkspiffs-0.1.2-linux-armhf.tar.gz",
+                            "checksum": "SHA-256:5a8836932cd24325d69054cebdd46359eba02919ffaa87b130c54acfecc13f46",
+                            "host": "arm-linux-gnueabihf",
+                            "archiveFileName": "mkspiffs-0.1.2-linux-armhf.tar.gz",
+                            "size": "41685"
                         }
                     ]
                 }
