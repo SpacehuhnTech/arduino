@@ -50,5 +50,63 @@
                 "name": "python3"
             }
         ]
+    },
+    {
+        "name": "WiFiDuck ESP8266 Boards",
+        "architecture": "esp8266",
+        "version": "2.7.4",
+        "category": "wifiduck",
+        "url": "https://github.com/spacehuhntech/arduino/releases/download/wifiduck-esp8266-2.7.4/wifiduck-esp8266-arduino-core-2.7.4.zip",
+        "archiveFileName": "wifiduck-esp8266-arduino-core-2.7.4.zip",
+        "checksum": "SHA-256:efc24beb8c2c69b9e22d07690dc15aab2fa778e64161f41c1a302832cc4cdde9",
+        "size": 162448378,
+        "help": {
+            "online": "https://github.com/spacehuhntech/wifiduck"
+        },
+        "boards": [
+            {
+                "name": "DSTIKE WiFi Duck (ESP8266)"
+            },
+            {
+                "name": "Malduino W (ESP8266)"
+            },
+            {
+                "name": "Generic ESP8266"
+            },
+            {
+                "name": "Generic ESP8285"
+            },
+            {
+                "name": "Adafruit Feather HUZZAH"
+            },
+            {
+                "name": "NodeMCU"
+            },
+            {
+                "name": "LOLIN(WEMOS) D1 mini"
+            }
+        ],
+        "toolsDependencies": [
+            {
+                "packager": "wifiduck",
+                "version": "2.5.0-4-b40a506",
+                "name": "xtensa-lx106-elf-gcc"
+            },
+            {
+                "packager": "wifiduck",
+                "version": "2.5.0-4-b40a506",
+                "name": "mkspiffs"
+            },
+            {
+                "packager": "wifiduck",
+                "version": "2.5.0-4-fe5bb56",
+                "name": "mklittlefs"
+            },
+            {
+                "packager": "wifiduck",
+                "version": "3.7.2-post1",
+                "name": "python3"
+            }
+        ]
     }
 ]

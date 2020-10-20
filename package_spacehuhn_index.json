@@ -560,6 +560,64 @@
                     ]
                 },
                 {
+                    "name": "WiFiDuck ESP8266 Boards",
+                    "architecture": "esp8266",
+                    "version": "2.7.4",
+                    "category": "wifiduck",
+                    "url": "https://github.com/spacehuhntech/arduino/releases/download/wifiduck-esp8266-2.7.4/wifiduck-esp8266-arduino-core-2.7.4.zip",
+                    "archiveFileName": "wifiduck-esp8266-arduino-core-2.7.4.zip",
+                    "checksum": "SHA-256:efc24beb8c2c69b9e22d07690dc15aab2fa778e64161f41c1a302832cc4cdde9",
+                    "size": 162448378,
+                    "help": {
+                        "online": "https://github.com/spacehuhntech/wifiduck"
+                    },
+                    "boards": [
+                        {
+                            "name": "DSTIKE WiFi Duck (ESP8266)"
+                        },
+                        {
+                            "name": "Malduino W (ESP8266)"
+                        },
+                        {
+                            "name": "Generic ESP8266"
+                        },
+                        {
+                            "name": "Generic ESP8285"
+                        },
+                        {
+                            "name": "Adafruit Feather HUZZAH"
+                        },
+                        {
+                            "name": "NodeMCU"
+                        },
+                        {
+                            "name": "LOLIN(WEMOS) D1 mini"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "wifiduck",
+                            "version": "2.5.0-4-b40a506",
+                            "name": "xtensa-lx106-elf-gcc"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "version": "2.5.0-4-b40a506",
+                            "name": "mkspiffs"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "version": "2.5.0-4-fe5bb56",
+                            "name": "mklittlefs"
+                        },
+                        {
+                            "packager": "wifiduck",
+                            "version": "3.7.2-post1",
+                            "name": "python3"
+                        }
+                    ]
+                },
+                {
                     "name": "WiFi Duck AVR Boards",
                     "architecture": "avr",
                     "version": "1.8.3",
@@ -1040,6 +1098,109 @@
                             "host": "i686-mingw32",
                             "archiveFileName": "arduinoOTA-1.3.0-windows_386.zip",
                             "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-windows_386.zip"
+                        }
+                    ]
+                },
+                {
+                    "name": "CMSIS",
+                    "version": "5.4.0",
+                    "systems": [
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "x86_64-pc-linux-gnu",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "i686-pc-linux-gnu",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "arm-linux-gnueabihf",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "aarch64-linux-gnu",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        },
+                        {
+                            "host": "all",
+                            "url": "https://github.com/ARM-software/CMSIS_5/archive/5.4.0.tar.gz",
+                            "archiveFileName": "CMSIS_5-5.4.0-adafruit.tar.gz",
+                            "checksum": "SHA-256:93d09907ceb23a520ef65e6b5014d2e866efa6b7f5fe5d8828b29bbc54dec697",
+                            "size": "153772853"
+                        }
+                    ]
+                },
+                {
+                    "name": "arm-none-eabi-gcc",
+                    "version": "9-2019q4",
+                    "systems": [
+                        {
+                            "host": "arm-linux-gnueabihf",
+                            "url": "http://downloads.arduino.cc/tools/gcc-arm-none-eabi-7-2019-q4-major-linuxarm.tar.bz2",
+                            "archiveFileName": "gcc-arm-none-eabi-7-2019-q4-major-linuxarm.tar.bz2",
+                            "checksum": "SHA-256:34180943d95f759c66444a40b032f7dd9159a562670fc334f049567de140c51b",
+                            "size": "96613739"
+                        },
+                        {
+                            "host": "aarch64-linux-gnu",
+                            "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2",
+                            "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2",
+                            "checksum": "MD5:0dfa059aae18fcf7d842e30c525076a4",
+                            "size": "128670769"
+                        },
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/gcc-arm-none-eabi-9-2019-q4-major-win32.zip",
+                            "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-win32.zip",
+                            "checksum": "MD5:9d60cbb0e358ab6a9d3c9e5dc3624dd2",
+                            "size": "153520070"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2",
+                            "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2",
+                            "checksum": "MD5:241b64f0578db2cf146034fc5bcee3d4",
+                            "size": "116770520"
+                        },
+                        {
+                            "host": "x86_64-pc-linux-gnu",
+                            "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2",
+                            "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2",
+                            "checksum": "MD5:fe0029de4f4ec43cf7008944e34ff8cc",
+                            "size": "116802378"
+                        },
+                        {
+                            "host": "i686-pc-linux-gnu",
+                            "url": "http://downloads.arduino.cc/tools/gcc-arm-none-eabi-7-2018-q2-update-linux32.tar.bz2",
+                            "archiveFileName": "gcc-arm-none-eabi-7-2018-q2-update-linux32.tar.bz2",
+                            "checksum": "SHA-256:090a0bc2b1956bc49392dff924a6c30fa57c88130097b1972204d67a45ce3cf3",
+                            "size": "97427309"
                         }
                     ]
                 },
